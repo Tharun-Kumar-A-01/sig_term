@@ -1,15 +1,12 @@
-# Terminus
+# sudoers_theme
 
-An accessible [Zola](https://github.com/getzola/zola) theme with a dark color
-scheme and retro computer terminal-like vibe, multi-language support, zero
-required JavaScript, pretty font ligatures, and a perfect baseline Lighthouse
-score.
+An accessible [Zola](https://github.com/getzola/zola) theme from [ebkalderon/terminus](https://github.com/ebkalderon/terminus) with 
+a dark and light color scheme, multi-language support, zero required JavaScript, pretty 
+font ligatures, and a perfect baseline Lighthouse score.
 
-**Try the demo now:** https://ebkalderon.github.io/terminus/
+![Screenshot of the sudoers_theme demo website on a desktop browser](screenshot.png)
 
-![Screenshot of the Terminus demo website on a desktop browser](https://github.com/user-attachments/assets/ae7c378b-2987-4dbd-a84e-7d272e8856bc)
-
-Terminus is largely a port of Radek Kozieł's [Terminal Theme for
+The parent theme Terminus, is largely a port of Radek Kozieł's [Terminal Theme for
 Hugo](https://github.com/panr/hugo-theme-terminal) but with several key
 differences. Credit to the [zerm](https://github.com/ejmg/zerm) and
 [tabi](https://github.com/welpo/tabi) themes for inspiring some of these
@@ -50,11 +47,11 @@ changes.
    ```
 2. Add the theme as a Git submodule:
    ```
-   git submodule add https://github.com/ebkalderon/terminus.git themes/terminus
+   git submodule add https://sr.ht/~darth_vader/sudoers_theme.git themes/sudoers_theme
    ```
 3. Enable the theme in your `config.toml`:
    ```toml
-   theme = "terminus"
+   theme = "sudoers_theme"
    ```
 4. Set a website `title` in your  `config.toml`:
    ```toml
@@ -82,12 +79,12 @@ changes.
 
 [Zola project directory]: https://www.getzola.org/documentation/getting-started/cli-usage/#init
 
-### Updating Terminus
+### Updating sudoers_theme
 
 To update the Terminus theme as a Git submodule, run:
 
 ```bash
-git submodule update --remote themes/terminus
+git submodule update --remote themes/sudoers_theme
 ```
 
 ## License
