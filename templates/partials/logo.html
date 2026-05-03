@@ -1,9 +1,7 @@
-<a href="{{ get_url(path='/', lang=lang) }}">
-    <span class="logo">
-        {%- if config.extra.header_logo -%}
-            <img class="logo-img" src="{{ get_url(path=config.extra.header_logo, cachebust=true) }}" alt="{{ config.extra.header_title | default(value=config.title) | safe }}">
-        {%- else -%}
+<p>
+    <a class="logo" href="{{ get_url(path='/', lang=lang) }}">
             {{ config.extra.header_title | default(value=config.title) | safe }}
-        {%- endif -%}
+    </a>
+    <span id="current-path">
     </span>
-</a>
+</p>

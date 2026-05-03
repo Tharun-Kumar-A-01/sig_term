@@ -76,7 +76,7 @@ class ThemeSwitcher {
 
   updateMetaThemeColor() {
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const themeColor = window.getComputedStyle(document.body).getPropertyValue('--background-color');
+    const themeColor = window.getComputedStyle(document.body).getPropertyValue('--background');
     if (metaTheme && themeColor) {
       metaTheme.setAttribute("content", themeColor);
     }
@@ -195,5 +195,5 @@ class ThemeSwitcher {
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => new ThemeSwitcher());
 } else {
-  new ThemeSwitcher();
+	new ThemeSwitcher();
 }

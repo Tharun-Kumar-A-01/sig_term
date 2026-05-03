@@ -1,19 +1,14 @@
-name = "terminus"
-description = "A dark duotone retro theme for Zola"
+name = "sudoers_theme"
+description = "A dark duotone retro theme for Zola Terminus fork"
 tags = ["dark", "blog", "minimal", "personal", "responsive", "seo"]
 license = "MIT"
-homepage = "https://github.com/ebkalderon/terminus"
+homepage = "https://sr.ht/~darth_vader/sudoers_theme"
 min_version = "0.22.0"
-demo = "https://ebkalderon.github.io/terminus/"
+demo = "https://tharun-kumar-a-01.github.io/sudoers_theme/"
 
 [author]
-name = "Eyal Kalderon"
-homepage = "https://eyalkalderon.com"
-
-[original]
-author =  "panr"
-homepage = "https://radekkoziel.pl"
-repo = "https://github.com/panr/hugo-theme-terminal"
+name = "Tharun Kumar"
+homepage = "https://tharun-kumar-a-01.github.io/portfolio"
 
 [extra]
 # Automatically close responsive hamburger menu on window resize (requires JS).
@@ -24,7 +19,7 @@ close_responsive_menu_on_resize = true
 # Supported color schemes: "terminus", "tokyo-night", "solarized-dark", "nord",
 # "one-dark", "gruvbox-dark", "oled-abyss", "solar-flare", "catppuccin-latte",
 # "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha".
-color_scheme = "terminus"
+color_scheme = "dark"
 
 # Enable dynamic color scheme switcher in site navigation bar (requires JS).
 color_scheme_switcher = false
@@ -47,7 +42,6 @@ copy_button = true
 # Strings delimited by `::` will be split into mobile-responsive HTML spans. If
 # present, the placeholder values `$YEAR` and `$AUTHOR` are templated with the
 # current year and the site author defined in your `config.toml`, respectively.
-copyright = "© $YEAR $AUTHOR :: Powered by [Zola](https://www.getzola.org) :: Theme by [ebkalderon](https://eyalkalderon.com)"
 
 # favicon = "images/favicon.png"
 # favicon_emoji = "👨‍💻"

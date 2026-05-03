@@ -9,7 +9,7 @@
             {%- set trailing_slash = item.trailing_slash | default(value=false) -%}
             {%- set url = get_url(path=item.url, trailing_slash=trailing_slash) -%}
         {%- endif %}
-        <li><a href="{{ url | safe }}" {%- if item.new_tab %} target="_blank" {%- endif -%}>{{ item.name }}</a></li>
+        <li><a href="{{ url | safe }}" {%- if item.new_tab %} target="_blank" {%- endif -%}>{{ item.name }}/</a></li>
         {%- endfor %}
     </ul>
 </nav>

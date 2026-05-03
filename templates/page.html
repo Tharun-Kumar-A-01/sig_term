@@ -15,9 +15,32 @@
 {%- block main -%}
 {%- filter indent -%}{%- filter indent -%}
 <article class="post content">
+
+
     {{ post_macros::header(page=page, heading="h1") | indent | safe }}
 {%- endfilter %}{%- endfilter %}
 
+	{% if page.toc %}
+	<div class="toc">
+		<h1 class="toc-title">Table of Contents</h1>
+    <ol>
+    {% for h1 in page.toc %}
+        <li>
+            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+            {% if h1.children %}
+                <ol>
+                    {% for h2 in h1.children %}
+                        <li>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ol>
+	</div>
+{% endif %}
 {{ page.content | safe }}
 
 {%- filter indent -%}{%- filter indent %}
@@ -37,7 +60,7 @@
         </a>
         {%- endif %}
         {%- if page.lower and page.higher %}
-        <span aria-hidden="true" role="separator">::</span>
+        <span aria-hidden="true" role="separator">|</span>
         {%- endif %}
         {%- if page.higher %}
         <a rel="prev" href="{{ page.higher.permalink | safe }}" aria-label="Prev article">

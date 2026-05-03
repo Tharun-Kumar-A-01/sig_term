@@ -14,7 +14,7 @@
       transition: all 0.15s ease;
 
       // Ensure good contrast on all themes
-      color: var(--text-color);
+      color: var(--text);
 
       // Special handling for extreme themes
       [data-theme="solar-flare"] & {
@@ -36,7 +36,7 @@
       }
 
       &:hover {
-        color: var(--accent-color);
+        color: var(--primary);
       }
     }
 
@@ -51,12 +51,12 @@
       list-style: none;
       text-wrap: nowrap;
 
-      background: var(--background-color);
-      border: 2px solid var(--accent-color);
+      background: var(--background);
+      border: 2px solid var(--primary);
       box-shadow:
-        0 10px color-mix(in srgb, var(--accent-color) 70%, transparent),
-        -10px 10px color-mix(in srgb, var(--accent-color) 70%, transparent),
-        10px 10px color-mix(in srgb, var(--accent-color) 70%, transparent);
+        0 10px color-mix(in srgb, var(--primary) 70%, transparent),
+        -10px 10px color-mix(in srgb, var(--primary) 70%, transparent),
+        10px 10px color-mix(in srgb, var(--primary) 70%, transparent);
 
       &.show {
         display: block;
@@ -69,19 +69,19 @@
       a {
         display: block;
         padding: 5px 8px;
-        color: var(--text-color);
+        color: var(--text);
         text-decoration: none;
         transition: all 0.15s ease;
         border-radius: 3px;
 
         &:hover {
-          background: color-mix(in srgb, var(--accent-color) 15%, transparent);
-          color: var(--text-color);
+          background: color-mix(in srgb, var(--primary) 15%, transparent);
+          color: var(--text);
         }
 
         &.current {
-          color: var(--accent-color);
-          background: color-mix(in srgb, var(--accent-color) 10%, transparent);
+          color: var(--primary);
+          background: color-mix(in srgb, var(--primary) 10%, transparent);
           font-weight: bold;
 
           &::before {
@@ -97,7 +97,7 @@
         position: static;
         margin: 10px 0 0 0;
         box-shadow: none;
-        border: 1px solid var(--accent-color);
+        border: 1px solid var(--primary);
 
         &.show {
           display: block;

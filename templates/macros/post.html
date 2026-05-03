@@ -15,7 +15,7 @@
 {%- endmacro -%}
 
 {%- macro header(page, heading, is_excerpt=false) -%}
-<header>
+<header class="post-header {{is_excerpt }}">
     <{{ heading }} class="post-title">
         <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
     </{{ heading }}>
@@ -30,17 +30,17 @@
         </li>
 
         {%- if page.authors %}
-        <li role="separator" aria-hidden="true">::</li>
+        <li role="separator" aria-hidden="true">|</li>
         <li title="Authors">
             {%- for author in page.authors -%}
             {{ author }}{%- if not loop.last -%}, {% endif -%}
             {%- endfor -%}
         </li>
         {%- elif config.author and config.extra.show_default_author %}
-        <li role="separator" aria-hidden="true">::</li>
+        <li role="separator" aria-hidden="true">|</li>
         <li title="Author">{{ config.author }}</li>
         {%- endif %}
-        <li role="separator" aria-hidden="true">::</li>
+        <li role="separator" aria-hidden="true">|</li>
 
         {%- set reading_time = page.reading_time ~ " min" | replace(from="0 min", to="<1 min") -%}
         {%- set word_count = [page.word_count ~ " word", page.word_count | pluralize] | join %}
@@ -55,7 +55,7 @@
         {%- endfor %}
 
         {%- if page.taxonomies.categories and page.taxonomies.tags %}
-        <span role="separator">::</span>
+        <span role="separator">|</span>
         {%- endif %}
 
         {%- for tag in page.taxonomies.tags | default(value=[]) %}
@@ -68,5 +68,5 @@
 {%- endmacro -%}
 
 {%- macro date(value) -%}
-<time datetime="{{ value }}">{{ value | date(format="%Y.%m.%d") }}</time>
+<time datetime="{{ value }}">{{ value | date(format="%Y-%m-%d") }}</time>
 {%- endmacro -%}

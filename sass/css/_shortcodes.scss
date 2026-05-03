@@ -1,16 +1,20 @@
 figure.mastodon-post {
     position: relative;
-    border: 1px solid var(--accent-color);
+    border-left: 1px solid var(--primary);
     margin: 0;
-    padding: 60px 25px 25px;
+    padding: 70px 25px 25px;
 
     &::before {
-        content: '> From Mastodon:';
+        mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xODQsMzJINzJBNDAsNDAsMCwwLDAsMzIsNzJWMTkyYTQwLDQwLDAsMCwwLDQwLDQwaDg4YTgsOCwwLDAsMCwwLTE2SDcyYTI0LDI0LDAsMCwxLTI0LTI0di04SDE4NGE0MCw0MCwwLDAsMCw0MC00MFY3MkE0MCw0MCwwLDAsMCwxODQsMzJabTI0LDExMmEyNCwyNCwwLDAsMS0yNCwyNEg0OFY3MkEyNCwyNCwwLDAsMSw3Miw0OEgxODRhMjQsMjQsMCwwLDEsMjQsMjRabS0yNC00MHYzMmE4LDgsMCwwLDEtMTYsMFYxMDRhMTYsMTYsMCwwLDAtMzIsMHYzMmE4LDgsMCwwLDEtMTYsMFYxMDRhMTYsMTYsMCwwLDAtMzIsMHYzMmE4LDgsMCwwLDEtMTYsMFYxMDRhMzIsMzIsMCwwLDEsNTYtMjEuMTNBMzIsMzIsMCwwLDEsMTg0LDEwNFoiPjwvcGF0aD48L3N2Zz4=");
+        content: "";
+        background-color: var(--primary);
+        height: 36px;
+        width: 36px;
         position: absolute;
         top: 20px;
         inset-inline-start: 20px;
         display: block;
-        color: var(--accent-color);
+        color: var(--primary);
         font-weight: bold;
     }
 

@@ -16,14 +16,41 @@ for (const codeBlock of codeBlocks) {
     if (navigator.clipboard !== undefined) {
         const copyButton = document.createElement("button");
         copyButton.classList.add("copy-button");
-        copyButton.innerText = "Copy";
+        copyButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--background-600)" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>`;
 
         copyButton.addEventListener("click", () => {
-            copyButton.innerText = "Copied!";
+            copyButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--primary-600)" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>`;
             navigator.clipboard.writeText(content);
-            setTimeout(() => copyButton.innerText = "Copy", 1000);
+            setTimeout(() => {
+                copyButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--background-600)" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>`;
+            }, 1000);
         });
 
         preBlock.prepend(copyButton);
     }
+}
+
+// document.getElementById("current-path").innerText = "~" + window.location.pathname;
+
+let patname = window.location.pathname;
+let paths = patname.split("/");
+console.log(paths)
+let path_el = document.getElementById("current-path");
+for (path in paths) {
+	if (paths[path] === "") {
+		paths.splice(path, 1)
+	}
+}
+if (paths.length > 3) {
+	path_el.innerHTML = ".../";
+	for (let i = paths.length - 3; i < paths.length; i++) {
+		if (paths[i] === "") continue;
+		path_el.innerHTML += `<a class="bc-path-element" href="/${paths.slice(0, i + 1).join("/")}">${paths[i]}</a>/`
+	}
+} else {
+	path_el.innerHTML = "~/";
+	for (let i = 0; i < paths.length; i++) {
+		if (paths[i] === "") continue;
+		path_el.innerHTML += `<a class="bc-path-element" href="/${paths.slice(0, i + 1).join("/")}">${paths[i]}</a>/`
+	}
 }

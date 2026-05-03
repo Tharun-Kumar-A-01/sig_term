@@ -1,25 +1,31 @@
 :root {
-    --code-border: color-mix(in srgb, var(--text-color) 10%, transparent);
+    --code-border: color-mix(in srgb, var(--text) 10%, transparent);
 }
 
 $header-padding-vertical: 6px;
 $header-border-thickness: 1px;
-$line-number-color: color-mix(in srgb, var(--text-color) 53%, transparent);
+$line-number-color: color-mix(in srgb, var(--text) 53%, transparent);
 
 .copy-button {
     position: absolute;
     z-index: 1;
     top: $header-padding-vertical;
     inset-inline-end: 10px;
-    width: 4.5rem;
-    padding: 3px 8px;
-    border: 1px solid color-mix(in srgb, var(--accent-color) 15%, transparent);
+    /* width: 4.5rem; */
+    padding: 0 4px;
+    /* padding: 3px 8px; */
+    /* border: 1px solid color-mix(in srgb, var(--primary) 15%, transparent); */
+    border:none;
     font-size: calc(var(--font-size) * 0.8);
     font-weight: normal;
     line-height: 1em;
 
     @media print {
         display: none;
+    }
+
+    &:hover {
+        background-color: inherit;
     }
 }
 
@@ -91,7 +97,7 @@ pre.giallo:not(:has(code[data-lang="plain"])) {
 
     &:has(.copy-button) code[data-name]::after {
         @media screen {
-            inset-inline-end: calc(4.5rem + 10px);
+            inset-inline-end: calc(50px);
         }
     }
 }
