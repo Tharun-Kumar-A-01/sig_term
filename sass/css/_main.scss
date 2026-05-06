@@ -71,33 +71,39 @@ main {
 }
 
 h1 {
-    font-size: calc(var(--font-size) * 1.45);
+    font-size: calc(var(--font-size) * 2.35);
     letter-spacing: 0;
+    font-family: 'Newsreader';
+    margin:  48px 0 24px;
+    line-height: calc(var(--font-size) * 2.45);
 }
 
 h2 {
-    font-size: calc(var(--font-size) * 1.35);
+    font-size: calc(var(--font-size) * 1.95);
     letter-spacing: 0;
+    font-family: 'Newsreader';
+    line-height: calc(var(--font-size) * 2.05);
+    margin:  48px 0 24px;
 }
 
 h3 {
-    font-size: calc(var(--font-size) * 1.15);
+    font-size: calc(var(--font-size) * 1.75);
     letter-spacing: 0;
+    font-family: 'Newsreader';
+    line-height: calc(var(--font-size) * 1.85);
+    margin:  48px 0 24px;
 }
 
 h4,
 h5,
 h6 {
-    font-size: calc(var(--font-size) * 1);
+    font-size: calc(var(--font-size) * 1.35);
     letter-spacing: 0;
+    font-family: 'Newsreader';
+    margin:  48px 0 24px;
+    line-height: calc(var(--font-size) * 1.45);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 p,
 ul,
 ol,
@@ -111,7 +117,6 @@ table {
 a {
     color: var(--primary);
     outline: none;
-
     &.read-more {
         text-decoration: none;
     }
@@ -337,7 +342,8 @@ blockquote {
 
 table {
     border-collapse: collapse;
-
+    display: block;
+    overflow-y: scroll;
     th,
     td {
         border: 1px solid var(--background-400);
@@ -355,8 +361,9 @@ table {
 
 hr {
     width: 100%;
-    height: 2px;
+    height: 1px;
     border: none;
+    margin: 48px 0;
     background: var(--background-200);
 }
 

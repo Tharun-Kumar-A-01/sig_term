@@ -30,6 +30,8 @@ headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
 ###### H6
 
+---
+
 ## Paragraph
 
 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum,
@@ -45,6 +47,8 @@ tiustia prat.
 
 Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne
 sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+
+---
 
 ## Blockquotes
 
@@ -66,10 +70,18 @@ and optionally with in-line changes such as annotations and abbreviations.
 [^1]: The above quote is excerpted from Rob Pike's
       [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest,
       November 18, 2015.
+[^2]: The above quote is excerpted from Rob Pike's
+      [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest,
+      November 18, 2015.
+[^3]: The above quote is excerpted from Rob Pike's
+      [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest,
+      November 18, 2015.
+
+---
 
 #### GitHub-style alerts
 
-Alerts, also sometimes known as callouts or admonitions, are a Markdown
+Alerts, also sometimes known as[^2] callouts[^3] or admonitions, are a Markdown
 extension based on the blockquote syntax that you can use to emphasize critical
 information. **Requires Zola 0.21.0 or newer.**
 
@@ -93,6 +105,7 @@ information. **Requires Zola 0.21.0 or newer.**
 <button>Button</button>
 <a href="">Link</a>
 
+---
 ## Tables
 
 Tables aren't part of the core Markdown spec, but Zola supports them out of the

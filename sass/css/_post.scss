@@ -116,6 +116,10 @@ ul.post-meta {
 .toc {
 	border-bottom: 1px solid var(--background-200);
 	padding-left: 32px;
+
+	@media (max-width: 684px) {
+		padding-left: 12px;
+	}
 }
 
 .post-tags {
@@ -185,11 +189,28 @@ h6 {
 // GitHub-style bottom footnotes
 
 .footnotes {
-    border-top: 1px solid var(--background-600);
-
+    border-top: 1px solid var(--background-200);
+    margin-top: 48px;
+    position: relative;
+    &::before {
+        content: 'FOOTNOTES';
+        font-size: 0.8rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--background-600);
+        position: absolute;
+        top:-12px;
+        background: var(--background);
+        padding: 0 4px;
+    }
     .footnotes-list p {
         color: var(--background-600);
         text-align: start;
+
+        a:last-child {
+        text-decoration: none;
+        }
     }
 }
 
@@ -207,8 +228,10 @@ h6 {
         h2 {
             text-align: center;
             margin: 0 auto;
-            padding: 5px 10px;
+            padding: 8px 10px 3px;
             background: var(--background);
+            font-family: 'Fira Code',monospace;
+            line-height: calc(var(--line-height) * 0.8);
             color: color-mix(in srgb var(--text) 30%, transparent);
             font-size: calc(var(--font-size) * 0.8);
             font-weight: normal;
@@ -223,7 +246,7 @@ h6 {
             position: absolute;
             inset-inline: 0;
             width: 100%;
-            margin-top: 15px;
+            margin: 15px 0;
             z-index: 0;
         }
     }

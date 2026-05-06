@@ -52,7 +52,7 @@
             text-wrap: nowrap;
 
             &:not(:first-child)::before {
-                content: ':: ';
+                content: '|';
             }
         }
     }

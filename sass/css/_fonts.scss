@@ -1,4 +1,18 @@
 @font-face {
+    font-family: 'Newsreader';
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Newsreader.woff2') format('woff2-variations');
+}
+
+@font-face {
+    font-family: 'Newsreader';
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Newsreader_Italic.woff2') format('woff2-variations');
+}
+
+@font-face {
     font-family: 'Fira Code';
     font-style: normal;
     font-weight: 400;

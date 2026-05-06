@@ -3,11 +3,11 @@ base_url = "https://sudo-ers.github.io/"
 
 # The site title and description; used in feeds by default.
 title = "sudoers"
-description = "Demo website for the Terminus theme for Zola"
+description = "Demo of sudoers_theme"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-theme="sudoers_theme"
+# theme="sudoers_theme"
 # When set to "true", a feed is automatically generated.
 generate_feeds = true
 feed_filenames = ["rss.xml"]
@@ -70,7 +70,7 @@ socials = [
     { name = "email", url = "mailto:tharunkumar8906@gmail.com" },
     { name = "github", url = "https://github.com/sudo-ers" },
     { name = "linkedin", url = "https://www.linkedin.com/in/a-tharun-kumar" },
-    { name = "mastodon", url = "https://mastadon.org/@sudoers" },
+    { name = "mastodon", url = "https://mastodon.social/@sudoers" },
 ]
 
 [extra.content_security_policy]

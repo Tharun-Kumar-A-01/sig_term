@@ -68,5 +68,5 @@
 {%- endmacro -%}
 
 {%- macro date(value) -%}
-<time datetime="{{ value }}">{{ value | date(format="%Y-%m-%d") }}</time>
+<time datetime="{{ value }}">{{ value | date(format="%d-%m-%Y") }}</time>
 {%- endmacro -%}

@@ -10,9 +10,9 @@ Page not found | {{ config.title }}
 
 {%- block main -%}
 {%- filter indent -%}{%- filter indent -%}
-<section class="framed">
+<section>
     <h1>404: Page not found...</h1>
-    <p>Sorry, this page doesn't exist. Go back <a href="{{ config.base_url | safe }}">home</a>?</p>
+    <p>Sorry, this page doesn't exist.<br/>Go back <a href="{{ config.base_url | safe }}">home</a></p>
 </section>
 {%- endfilter -%}{%- endfilter -%}
 {%- endblock -%}
