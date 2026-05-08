@@ -418,3 +418,23 @@ details {
 .katex {
 	overflow-x: scroll;
 }
+
+#home-section {
+	height: 60vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	&>#home-title {
+		font-size: 8rem;
+		font-family: "Fira Code";
+		color: var(--primary);
+	@media (max-width: 684px) {
+		font-size: 6rem;
+	}
+	@media (max-width: 434px) {
+		font-size: 4rem;	
+	}
+	}
+}
