@@ -1,19 +1,15 @@
-@use 'variables';
-
-$base-url: "/" !default;
-
 @font-face {
     font-family: 'Newsreader';
     font-style: normal;
     font-display: swap;
-    src: url('#{$base-url}/fonts/Newsreader.woff2') format('woff2-variations');
+    src: url('./fonts/Newsreader.woff2') format('woff2-variations');
 }
 
 @font-face {
     font-family: 'Newsreader';
     font-style: italic;
     font-display: swap;
-    src: url('#{$base-url}/fonts/Newsreader_Italic.woff2') format('woff2-variations');
+    src: url('./fonts/Newsreader_Italic.woff2') format('woff2-variations');
 }
 
 @font-face {
@@ -21,7 +17,7 @@ $base-url: "/" !default;
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('#{$base-url}/fonts/FiraCode-Regular.woff2') format('woff2');
+    src: url('./fonts/FiraCode-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -29,5 +25,5 @@ $base-url: "/" !default;
     font-style: normal;
     font-weight: 800;
     font-display: swap;
-    src: url('#{$base-url}/fonts/FiraCode-Bold.woff2') format('woff2');
+    src: url('./fonts/FiraCode-Bold.woff2') format('woff2');
 }
