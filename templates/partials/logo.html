@@ -1,5 +1,5 @@
 <p>
-    <a class="logo" href="{{ get_url(path='/', lang=lang) }}">
+    <a class="logo" href="{{ config.extra.logo_base_url | default(value=config.base_url) | safe }}">
             {{ config.extra.header_title | default(value=config.title) | safe }}
     </a>
     <span id="current-path">

@@ -55,6 +55,8 @@ light_theme = "catppuccin-latte"
 dark_theme = "catppuccin-mocha"
 
 [extra]
+logo_base_url = "https://sudo-ers.github.io/"
+
 close_responsive_menu_on_resize = true
 favicon_emoji = "~/"
 layout = "center"
@@ -62,8 +64,8 @@ show_default_author = false
 
 main_menu = [
     { name = "blog", url = "blog", trailing_slash = true },
-    { name = "tags", url = "blog/tags", trailing_slash = true },
-    { name = "rss", url = "blog/rss", trailing_slash = true },
+    { name = "tags", url = "tags", trailing_slash = true },
+    { name = "rss", url = "rss.xml", trailing_slash = true },
 ]
 
 socials = [
