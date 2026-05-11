@@ -112,10 +112,12 @@ figure,
 video,
 table {
     margin: 25px 0;
+    font-family: "Fira Sans",sans-serif;
 }
 
 a {
     color: var(--primary);
+    font-family: "Fira Code";
     outline: none;
     &.read-more {
         text-decoration: none;
@@ -140,6 +142,7 @@ button {
     letter-spacing: 1px;
     cursor: pointer;
     outline: none;
+    font-family: "Fira Code";
 
     &:hover {
         background:var(--primary);
@@ -229,6 +232,7 @@ ol {
         position: relative;
 
         &::marker {
+        font-family: "Fira Code";
             color: var(--primary);
         }
     }
@@ -313,7 +317,7 @@ sup {
 }
 
 mark {
-    background: color-mix(in srgb, var(--primary) 45%, transparent);
+    background: var(--primary-200);
     color: var(--text);
 }
 
@@ -330,7 +334,25 @@ blockquote {
         inset-inline-start: 0;
         color: var(--primary);
     }
+    &::after {
+        content: '“';
+        font-family: "Fira Code";
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        font-size: 1.4rem;
+        color: var(--primary);
+    }
+    &.markdown-alert-tip, &.markdown-alert-warning, &.markdown-alert-note , &.markdown-alert-important, &.markdown-alert-caution {
+        &::after {
+            content: '';
+        }
+        p::before {
+        font-family: "Fira Code";
 
+        }
+    }
     p:first-child {
         margin-top: 0;
     }
@@ -352,6 +374,7 @@ table {
 
     th {
         border-style: solid;
+        font-family: "Fira Code";
         color: var(--text);
         background-color: var(--primary-100);
         text-transform: uppercase;

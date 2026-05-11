@@ -24,6 +24,7 @@
 .header-logo-container {
     display: flex;
     flex: 1;
+    font-family: "Fira Code";
 
     &::after {
         content: '';
@@ -42,6 +43,7 @@
         flex-direction: row;
         align-items: center;
         gap: 12px;
+        font-family: "Fira Code";
 
         #current-path {
 			color: var(--primary);
