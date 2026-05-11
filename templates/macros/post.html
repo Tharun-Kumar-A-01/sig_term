@@ -33,7 +33,7 @@
         <li role="separator" aria-hidden="true">|</li>
         <li title="Authors">
             {%- for author in page.authors -%}
-            {{ author }}{%- if not loop.last -%}, {% endif -%}
+            {{ author }}{%- if not loop.last -%}&nbsp;&& {% endif -%}
             {%- endfor -%}
         </li>
         {%- elif config.author and config.extra.show_default_author %}
