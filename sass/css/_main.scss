@@ -453,11 +453,20 @@ details {
 		font-size: 8rem;
 		font-family: "Fira Code";
 		color: var(--primary);
-	@media (max-width: 684px) {
-		font-size: 6rem;
+		@media (max-width: 684px) {
+			font-size: 6rem;
+			margin-top: 14rem;
+		}
+		@media (max-width: 434px) {
+			font-size: 4rem;	
+		}
 	}
-	@media (max-width: 434px) {
-		font-size: 4rem;	
-	}
+	#thirukkural {
+		@media (max-width: 684px) {
+			font-size: 0.9rem;
+		}
+		@media (max-width: 434px) {
+			top: 90px;
+		}
 	}
 }

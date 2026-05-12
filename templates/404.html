@@ -10,9 +10,15 @@ Page not found | {{ config.title }}
 
 {%- block main -%}
 {%- filter indent -%}{%- filter indent -%}
-<section>
-    <h1>404: Page not found...</h1>
-    <p>Sorry, this page doesn't exist.<br/>Go back <a href="{{ config.base_url | safe }}">home</a></p>
+<section class="hero section" style="display: flex;flex-direction: column;width: 100%;align-items: center;justify-content: center;height: 65vh;">
+        <div id = "container">
+                <p id="error" style="font-family: 'Fira Code';">:(  ERROR</p>
+                <h1 id="code-404" style="padding:32px 0;color: var(--primary);font-size: 8rem;margin: 0;font-family: 'Fira Code';">404</h1><br>
+                <p id="error-desc" style=" padding: 25px 0; margin: 10px 0; border-bottom: 1px dashed var(--primary);font-family: 'Fira Code';">user not in sudoers file.<br>This incident will be reported.</p><br>
+                <a href="/"><button id="go-back-btn">Go Back</button></a>
+        </div>
+
 </section>
+
 {%- endfilter -%}{%- endfilter -%}
 {%- endblock -%}

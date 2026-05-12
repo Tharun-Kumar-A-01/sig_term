@@ -152,7 +152,9 @@
     {% block rss %}
       <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
     {% endblock %}
-</head>
+    {% block custom_fonts %}
+    {% endblock %}
+</head> 
 
 <body class="layout-{{ config.extra.layout }}" data-theme="{{ config.extra.color_scheme | default(value = "terminus") }}">
     <header class="header">
