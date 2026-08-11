@@ -33,7 +33,7 @@
     <link rel="apple-touch-icon" href="{{ resized_image.url | safe }}">
     {%- endif -%}
     {%- elif config.extra.favicon_emoji %}
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>{{ config.extra.favicon_emoji }}</text></svg>">
+    <link rel="icon" href="{{ get_url(path="images/favicon.ico") }}">
     {%- endif %}
 
     {%- if config.extra.close_responsive_menu_on_resize %}

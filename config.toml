@@ -51,8 +51,8 @@ style = "inline"
 
 # The theme to use for code highlighting.
 # See https://github.com/getzola/giallo?tab=readme-ov-file#themes for the list of allowed values.
-light_theme = "catppuccin-latte"                                                                                     
-dark_theme = "catppuccin-mocha"
+light_theme = "github-light-default"
+dark_theme = "github-dark-default"
 
 [extra]
 logo_base_url = "https://sudo-ers.github.io/"
