@@ -37,30 +37,6 @@
     {%- else -%}
         {%- set top_posts = blog_section.pages | slice(end=num_top_posts) -%}
     {%- endif -%}
-{%- else -%}
-    <!--{%- set blog_section = section -%}
-    {%- set top_posts = blog_section.pages -%}-->
-<div id="home-section">
-	<style>
-	#thirukkural {
-		top: 0;
-		width: calc(100% - 20px);
-		font-size: 1.1rem;
-		max-width: 536px;
-	}
-
-	.thirukkural {
-		font-size: 1.1rem;
-
-	}
-	</style>
-	<div id="thirukkural" style="top: 140px;width: calc(100% - 20px);max-width: 536px; position: absolute; text-align: start;">
-		<p class="thirukkural noto-serif-tamil-styled" id="thirukkural-tamil" style="font-family: 'Noto Serif Tamil', serif;">கற்க கசடறக் கற்பவை கற்றபின்<br>நிற்க அதற்குத் தக. <br><span style="display:block;width:100%;text-align: end;color:var(--primary);font-family: 'Noto Serif Tamil', serif;">- குறள் <span style="font-family: 'Fira Code',monospace;letter-spacing:-1px;">391</span></span></p>
-		<p class="thirukkural" id="thirukkural-english" style="font-family: 'Source Serif 4', serif;font-style: italic;">&ldquo;Learn thoroughly what should be learnt. <br>And having learnt, stand according to that.&rdquo;</p>
-	</div>
-    <h1 id="home-title">sudoers</h1>
-    <p id="home-slogan">The community which speaks everything</p>
-</div>
 {%- endif -%}
 
 {% for page in paginator.pages | default(value=top_posts) -%}

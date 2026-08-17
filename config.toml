@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://sudo-ers.github.io/"
+base_url = "https://sudo-ers.github.io/blog"
 
 # The site title and description; used in feeds by default.
 title = "sudoers"
@@ -55,7 +55,7 @@ light_theme = "github-light-default"
 dark_theme = "github-dark-default"
 
 [extra]
-logo_base_url = "https://sudo-ers.github.io/"
+logo_base_url = "/"
 
 close_responsive_menu_on_resize = true
 favicon_emoji = "~/"
@@ -63,9 +63,9 @@ layout = "center"
 show_default_author = false
 
 main_menu = [
-    { name = "blog", url = "blog", trailing_slash = true },
-    { name = "tags", url = "tags", trailing_slash = true },
-    { name = "rss", url = "rss.xml", trailing_slash = true },
+    { name = "blog", url = "/blog", trailing_slash = true },
+    { name = "tags", url = "/tags", trailing_slash = true },
+    { name = "rss", url = "/rss.xml", trailing_slash = true },
 ]
 
 socials = [
