@@ -63,10 +63,10 @@ layout = "center"
 show_default_author = false
 
 main_menu = [
-	{ name = "blog", url = "/blog", trailing_slash = true },
-	{ name = "tags", url = "/blog/tags", trailing_slash = true },
-	{ name = "categories", url = "/blog/categories", trailing_slash = true },
-	{ name = "rss", url = "/blog/rss.xml", trailing_slash = true },
+	{ name = "blog", url = "/", trailing_slash = true },
+	{ name = "tags", url = "/tags", trailing_slash = true },
+	{ name = "categories", url = "/categories", trailing_slash = true },
+	{ name = "rss", url = "/rss.xml", trailing_slash = true },
 ]
 
 socials = [
@@ -79,6 +79,9 @@ socials = [
 [extra.content_security_policy]
 enable = true
 allowed_domains = [
+	{ directive = "style-src", domains = ["'self'", "https://fonts.googleapis.com", "'unsafe-inline'"] },
+	{ directive = "font-src", domains = ["'self'", "https://fonts.gstatic.com", "data:"] },
+	{ directive = "connect-src", domains = ["https://fonts.googleapis.com", "https://fonts.gstatic.com"] },
 	{ directive = "base-uri", domains = ["'self'"] },
 	{ directive = "form-action", domains = ["'self'"] },
 ]
