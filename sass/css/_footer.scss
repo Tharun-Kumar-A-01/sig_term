@@ -1,61 +1,69 @@
 .footer {
-    padding: 40px 0;
-    font-family: "Fira Code";
+	padding: 40px 0;
+	font-family: "IBM Plex Mono",monospace;
 
-    a {
-        color: inherit;
-    }
+	a {
+		color: inherit;
+	}
 
-    .socials {
-        padding-bottom: 25px;
+	.socials {
+		padding-bottom: 25px;
 
-        @media print {
-            display: none;
-        }
+		@media print {
+			display: none;
+		}
 
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            justify-content: center;
-            margin: 0;
-            list-style: none;
-        }
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 5px;
+			justify-content: center;
+			margin: 0;
+			list-style: none;
+		}
 
-        .social-link {
-            display: flex;
-            padding: 0.66rem;
+		.social-link {
+			display: flex;
+			padding: 0.66rem;
 
-            &>svg {
-                aspect-ratio: 1/1;
-                width: 1.5rem;
-                height: auto;
-                margin: 0 auto;
-                fill: var(--background-400);
-            }
+			&>svg {
+				aspect-ratio: 1/1;
+				width: 1.5rem;
+				height: auto;
+				margin: 0 auto;
+				fill: var(--background-400);
+			}
 
-            &:hover {
-                background: var(--primary);
+			&:hover {
+				background: var(--primary);
 
-                &>svg {
-                    fill: var(--background);
-                }
-            }
-        }
-    }
+				&>svg {
+					fill: var(--background);
+				}
+			}
+		}
+	}
 
-    .copyright {
-        text-align: center;
-        margin: 0;
-        color: color-mix(in srgb, var(--text) 65%, transparent);
-        font-family: "Fira Code";
+	.copyright {
+		text-align: center;
+		margin: 0;
+		color: var(--background-400);
+		font-family: "IBM Plex Mono",monospace;
 
-        &>* {
-            text-wrap: nowrap;
+		&>* {
+			text-wrap: nowrap;
 
-            &:not(:first-child)::before {
-                content: '|';
-            }
-        }
-    }
+			&:not(:first-child)::before {
+				content: '|';
+			}
+		}
+		& a {
+			text-decoration: none;
+			color: var(--background-400);
+			cursor: pointer;
+			&:hover {
+				color: var(--primary);
+			}
+		}
+	}
 }

@@ -3,28 +3,28 @@
 // https://github.com/welpo/tabi/blob/93af295/sass/parts/_admonitions.scss
 
 @mixin alert-type($type) {
-    border-color: var(--alert-#{$type}-border);
-    background-color: color-mix(in srgb, var(--alert-#{$type}-bg) 15%, transparent);
+	border-color: var(--alert-#{$type}-border);
+	background-color: color-mix(in srgb, var(--alert-#{$type}-bg) 15%, transparent);
 
-    /* >.alert-content>p>code {
-        background-color: var(--background);
-    } */
+	/* >.alert-content>p>code {
+		background-color: var(--background);
+	} */
 
-    a {
-        color: var(--alert-#{$type}-border);
+	a {
+		color: var(--alert-#{$type}-border);
 
-        code {
-            background-color: var(--alert-#{$type}-bg);
-        }
-    }
+		code {
+			background-color: var(--alert-#{$type}-bg);
+		}
+	}
 
-    .alert-title {
-        color: var(--alert-#{$type}-border);
-    }
+	.alert-title {
+		color: var(--alert-#{$type}-border);
+	}
 
-    .alert-icon {
-        background-color: var(--alert-#{$type}-border);
-    }
+	.alert-icon {
+		background-color: var(--alert-#{$type}-border);
+	}
 }
 
 // Color relationships:
@@ -35,149 +35,149 @@
 // `bg`     | `border` darkened until contrast is >=5:1 with `border` and >=4.5:1 with `text-color`.
 // `code`   | `bg` brightened until contrast is >=1.3:1 with `bg` and >=4.5:1 with `text-color`.
 :root {
-    // Note
-    --alert-note-border: var(--text);
-    --alert-note-bg: var(--text-200);
-    --alert-note-code: var(--text-400);
+	// Note
+	--alert-note-border: var(--text);
+	--alert-note-bg: var(--text-200);
+	--alert-note-code: var(--text-400);
 
-    // Tip
-    --alert-tip-border: var(--secondary);
-    --alert-tip-bg: var(--secondary-200);
-    --alert-tip-code: var(--secondary-400);
+	// Tip
+	--alert-tip-border: var(--secondary);
+	--alert-tip-bg: var(--secondary-200);
+	--alert-tip-code: var(--secondary-400);
 
-    // Info
-    --alert-info-border: var(--blue);
-    --alert-info-bg: var(--blue-200);
-    --alert-info-code: var(--blue-400);
-    --alert-important-border: var(--alert-info-border);
-    --alert-important-bg: var(--alert-info-bg);
-    --alert-important-code: var(--alert-info-code);
+	// Info
+	--alert-info-border: var(--blue);
+	--alert-info-bg: var(--blue-200);
+	--alert-info-code: var(--blue-400);
+	--alert-important-border: var(--alert-info-border);
+	--alert-important-bg: var(--alert-info-bg);
+	--alert-important-code: var(--alert-info-code);
 
-    // Warning
-    --alert-warning-border: var(--yellow);
-    --alert-warning-bg: var(--yellow-200);
-    --alert-warning-code: var(--yellow-200);
+	// Warning
+	--alert-warning-border: var(--yellow);
+	--alert-warning-bg: var(--yellow-200);
+	--alert-warning-code: var(--yellow-200);
 
-    // Danger
-    --alert-danger-border: var(--error);
-    --alert-danger-bg: var(--error-200);
-    --alert-danger-code: var(--error-400);
-    --alert-caution-border: var(--alert-danger-border);
-    --alert-caution-bg: var(--alert-danger-bg);
-    --alert-caution-code: var(--alert-danger-code);
+	// Danger
+	--alert-danger-border: var(--error);
+	--alert-danger-bg: var(--error-200);
+	--alert-danger-code: var(--error-400);
+	--alert-caution-border: var(--alert-danger-border);
+	--alert-caution-bg: var(--alert-danger-bg);
+	--alert-caution-code: var(--alert-danger-code);
 }
 
 .alert {
-    display: flex;
-    align-items: flex-start;
-    margin-block: 25px;
-    border-radius: var(--radius);
-    border: 1px solid;
-    padding: 25px;
+	display: flex;
+	align-items: flex-start;
+	margin-block: 25px;
+	border-radius: var(--radius);
+	border: 1px solid;
+	padding: 25px;
 }
 
 .alert-content {
-    flex: 1;
-    margin-inline-start: -2rem;
+	flex: 1;
+	margin-inline-start: -2rem;
 
-    &>:not(:first-child) {
-        margin-block: 1rem 0;
-    }
+	&>:not(:first-child) {
+		margin-block: 1rem 0;
+	}
 
-    code {
-        color: inherit;
-    }
+	code {
+		color: inherit;
+	}
 
-    strong {
-        font-weight: 580;
-    }
+	strong {
+		font-weight: 580;
+	}
 }
 
 .alert-icon {
-    display: flex;
-    align-items: center;
-    margin-inline-end: 0.5rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-    aspect-ratio: 1/1;
-    width: 1.5rem;
+	display: flex;
+	align-items: center;
+	margin-inline-end: 0.5rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	aspect-ratio: 1/1;
+	width: 1.5rem;
 }
 
 .alert-title {
-    display: flex;
-    align-items: center;
-    margin-inline-start: 2rem;
-    font-weight: bold;
+	display: flex;
+	align-items: center;
+	margin-inline-start: 2rem;
+	font-weight: bold;
 }
 
 .alert-icon-note {
-    mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMjcuMzIsNzMuMzcsMTgyLjYzLDI4LjY5YTE2LDE2LDAsMCwwLTIyLjYzLDBMMzYuNjksMTUyQTE1Ljg2LDE1Ljg2LDAsMCwwLDMyLDE2My4zMVYyMDhhMTYsMTYsMCwwLDAsMTYsMTZIMjE2YTgsOCwwLDAsMCwwLTE2SDExNS4zMmwxMTItMTEyQTE2LDE2LDAsMCwwLDIyNy4zMiw3My4zN1pNOTIuNjksMjA4SDQ4VjE2My4zMWw4OC04OEwxODAuNjksMTIwWk0xOTIsMTA4LjY5LDE0Ny4zMiw2NGwyNC0yNEwyMTYsODQuNjlaIj48L3BhdGg+PC9zdmc+");
+	mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMjcuMzIsNzMuMzcsMTgyLjYzLDI4LjY5YTE2LDE2LDAsMCwwLTIyLjYzLDBMMzYuNjksMTUyQTE1Ljg2LDE1Ljg2LDAsMCwwLDMyLDE2My4zMVYyMDhhMTYsMTYsMCwwLDAsMTYsMTZIMjE2YTgsOCwwLDAsMCwwLTE2SDExNS4zMmwxMTItMTEyQTE2LDE2LDAsMCwwLDIyNy4zMiw3My4zN1pNOTIuNjksMjA4SDQ4VjE2My4zMWw4OC04OEwxODAuNjksMTIwWk0xOTIsMTA4LjY5LDE0Ny4zMiw2NGwyNC0yNEwyMTYsODQuNjlaIj48L3BhdGg+PC9zdmc+");
 }
 
 .alert-icon-tip {
-    mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xNzYsMjMyYTgsOCwwLDAsMS04LDhIODhhOCw4LDAsMCwxLDAtMTZoODBBOCw4LDAsMCwxLDE3NiwyMzJabTQwLTEyOGE4Ny41NSw4Ny41NSwwLDAsMS0zMy42NCw2OS4yMUExNi4yNCwxNi4yNCwwLDAsMCwxNzYsMTg2djZhMTYsMTYsMCwwLDEtMTYsMTZIOTZhMTYsMTYsMCwwLDEtMTYtMTZ2LTZhMTYsMTYsMCwwLDAtNi4yMy0xMi42NkE4Ny41OSw4Ny41OSwwLDAsMSw0MCwxMDQuNDlDMzkuNzQsNTYuODMsNzguMjYsMTcuMTQsMTI1Ljg4LDE2QTg4LDg4LDAsMCwxLDIxNiwxMDRabS0xNiwwYTcyLDcyLDAsMCwwLTczLjc0LTcyYy0zOSwuOTItNzAuNDcsMzMuMzktNzAuMjYsNzIuMzlhNzEuNjUsNzEuNjUsMCwwLDAsMjcuNjQsNTYuM0EzMiwzMiwwLDAsMSw5NiwxODZ2Nmg2NHYtNmEzMi4xNSwzMi4xNSwwLDAsMSwxMi40Ny0yNS4zNUE3MS42NSw3MS42NSwwLDAsMCwyMDAsMTA0Wm0tMTYuMTEtOS4zNGE1Ny42LDU3LjYsMCwwLDAtNDYuNTYtNDYuNTUsOCw4LDAsMCwwLTIuNjYsMTUuNzhjMTYuNTcsMi43OSwzMC42MywxNi44NSwzMy40NCwzMy40NUE4LDgsMCwwLDAsMTc2LDEwNGE5LDksMCwwLDAsMS4zNS0uMTFBOCw4LDAsMCwwLDE4My44OSw5NC42NloiPjwvcGF0aD48L3N2Zz4=");
+	mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xNzYsMjMyYTgsOCwwLDAsMS04LDhIODhhOCw4LDAsMCwxLDAtMTZoODBBOCw4LDAsMCwxLDE3NiwyMzJabTQwLTEyOGE4Ny41NSw4Ny41NSwwLDAsMS0zMy42NCw2OS4yMUExNi4yNCwxNi4yNCwwLDAsMCwxNzYsMTg2djZhMTYsMTYsMCwwLDEtMTYsMTZIOTZhMTYsMTYsMCwwLDEtMTYtMTZ2LTZhMTYsMTYsMCwwLDAtNi4yMy0xMi42NkE4Ny41OSw4Ny41OSwwLDAsMSw0MCwxMDQuNDlDMzkuNzQsNTYuODMsNzguMjYsMTcuMTQsMTI1Ljg4LDE2QTg4LDg4LDAsMCwxLDIxNiwxMDRabS0xNiwwYTcyLDcyLDAsMCwwLTczLjc0LTcyYy0zOSwuOTItNzAuNDcsMzMuMzktNzAuMjYsNzIuMzlhNzEuNjUsNzEuNjUsMCwwLDAsMjcuNjQsNTYuM0EzMiwzMiwwLDAsMSw5NiwxODZ2Nmg2NHYtNmEzMi4xNSwzMi4xNSwwLDAsMSwxMi40Ny0yNS4zNUE3MS42NSw3MS42NSwwLDAsMCwyMDAsMTA0Wm0tMTYuMTEtOS4zNGE1Ny42LDU3LjYsMCwwLDAtNDYuNTYtNDYuNTUsOCw4LDAsMCwwLTIuNjYsMTUuNzhjMTYuNTcsMi43OSwzMC42MywxNi44NSwzMy40NCwzMy40NUE4LDgsMCwwLDAsMTc2LDEwNGE5LDksMCwwLDAsMS4zNS0uMTFBOCw4LDAsMCwwLDE4My44OSw5NC42NloiPjwvcGF0aD48L3N2Zz4=");
 }
 
 .alert-icon-info,
 .alert-icon-important {
-    mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xMjgsMjRBMTA0LDEwNCwwLDEsMCwyMzIsMTI4LDEwNC4xMSwxMDQuMTEsMCwwLDAsMTI4LDI0Wm0wLDE5MmE4OCw4OCwwLDEsMSw4OC04OEE4OC4xLDg4LjEsMCwwLDEsMTI4LDIxNlptMTYtNDBhOCw4LDAsMCwxLTgsOCwxNiwxNiwwLDAsMS0xNi0xNlYxMjhhOCw4LDAsMCwxLDAtMTYsMTYsMTYsMCwwLDEsMTYsMTZ2NDBBOCw4LDAsMCwxLDE0NCwxNzZaTTExMiw4NGExMiwxMiwwLDEsMSwxMiwxMkExMiwxMiwwLDAsMSwxMTIsODRaIj48L3BhdGg+PC9zdmc+");
+	mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xMjgsMjRBMTA0LDEwNCwwLDEsMCwyMzIsMTI4LDEwNC4xMSwxMDQuMTEsMCwwLDAsMTI4LDI0Wm0wLDE5MmE4OCw4OCwwLDEsMSw4OC04OEE4OC4xLDg4LjEsMCwwLDEsMTI4LDIxNlptMTYtNDBhOCw4LDAsMCwxLTgsOCwxNiwxNiwwLDAsMS0xNi0xNlYxMjhhOCw4LDAsMCwxLDAtMTYsMTYsMTYsMCwwLDEsMTYsMTZ2NDBBOCw4LDAsMCwxLDE0NCwxNzZaTTExMiw4NGExMiwxMiwwLDEsMSwxMiwxMkExMiwxMiwwLDAsMSwxMTIsODRaIj48L3BhdGg+PC9zdmc+");
 }
 
 .alert-icon-warning {
-    mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMzYuOCwxODguMDksMTQ5LjM1LDM2LjIyaDBhMjQuNzYsMjQuNzYsMCwwLDAtNDIuNywwTDE5LjIsMTg4LjA5YTIzLjUxLDIzLjUxLDAsMCwwLDAsMjMuNzJBMjQuMzUsMjQuMzUsMCwwLDAsNDAuNTUsMjI0aDE3NC45YTI0LjM1LDI0LjM1LDAsMCwwLDIxLjMzLTEyLjE5QTIzLjUxLDIzLjUxLDAsMCwwLDIzNi44LDE4OC4wOVpNMjIyLjkzLDIwMy44YTguNSw4LjUsMCwwLDEtNy40OCw0LjJINDAuNTVhOC41LDguNSwwLDAsMS03LjQ4LTQuMiw3LjU5LDcuNTksMCwwLDEsMC03LjcyTDEyMC41Miw0NC4yMWE4Ljc1LDguNzUsMCwwLDEsMTUsMGw4Ny40NSwxNTEuODdBNy41OSw3LjU5LDAsMCwxLDIyMi45MywyMDMuOFpNMTIwLDE0NFYxMDRhOCw4LDAsMCwxLDE2LDB2NDBhOCw4LDAsMCwxLTE2LDBabTIwLDM2YTEyLDEyLDAsMSwxLTEyLTEyQTEyLDEyLDAsMCwxLDE0MCwxODBaIj48L3BhdGg+PC9zdmc+");
+	mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMzYuOCwxODguMDksMTQ5LjM1LDM2LjIyaDBhMjQuNzYsMjQuNzYsMCwwLDAtNDIuNywwTDE5LjIsMTg4LjA5YTIzLjUxLDIzLjUxLDAsMCwwLDAsMjMuNzJBMjQuMzUsMjQuMzUsMCwwLDAsNDAuNTUsMjI0aDE3NC45YTI0LjM1LDI0LjM1LDAsMCwwLDIxLjMzLTEyLjE5QTIzLjUxLDIzLjUxLDAsMCwwLDIzNi44LDE4OC4wOVpNMjIyLjkzLDIwMy44YTguNSw4LjUsMCwwLDEtNy40OCw0LjJINDAuNTVhOC41LDguNSwwLDAsMS03LjQ4LTQuMiw3LjU5LDcuNTksMCwwLDEsMC03LjcyTDEyMC41Miw0NC4yMWE4Ljc1LDguNzUsMCwwLDEsMTUsMGw4Ny40NSwxNTEuODdBNy41OSw3LjU5LDAsMCwxLDIyMi45MywyMDMuOFpNMTIwLDE0NFYxMDRhOCw4LDAsMCwxLDE2LDB2NDBhOCw4LDAsMCwxLTE2LDBabTIwLDM2YTEyLDEyLDAsMSwxLTEyLTEyQTEyLDEyLDAsMCwxLDE0MCwxODBaIj48L3BhdGg+PC9zdmc+");
 }
 
 .alert-icon-danger,
 .alert-icon-caution {
-    mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xMjAsMTZWOGE4LDgsMCwwLDEsMTYsMHY4YTgsOCwwLDAsMS0xNiwwWm04MCwzMmE4LDgsMCwwLDAsNS42Ni0yLjM0bDgtOGE4LDgsMCwwLDAtMTEuMzItMTEuMzJsLTgsOEE4LDgsMCwwLDAsMjAwLDQ4Wk01MC4zNCw0NS42NkE4LDgsMCwwLDAsNjEuNjYsMzQuMzRsLTgtOEE4LDgsMCwwLDAsNDIuMzQsMzcuNjZabTg3LDI2LjQ1YTgsOCwwLDEsMC0yLjY0LDE1Ljc4QzE1My42Nyw5MS4wOCwxNjgsMTA4LjMyLDE2OCwxMjhhOCw4LDAsMCwwLDE2LDBDMTg0LDEwMC42LDE2My45Myw3Ni41NywxMzcuMzIsNzIuMTFaTTIzMiwxNzZ2MjRhMTYsMTYsMCwwLDEtMTYsMTZINDBhMTYsMTYsMCwwLDEtMTYtMTZWMTc2YTE2LDE2LDAsMCwxLDE2LTE2VjEyOGE4OCw4OCwwLDAsMSw4OC42Ny04OGM0OC4xNS4zNiw4Ny4zMyw0MC4yOSw4Ny4zMyw4OXYzMUExNiwxNiwwLDAsMSwyMzIsMTc2Wk01NiwxNjBIMjAwVjEyOWMwLTQwLTMyLjA1LTcyLjcxLTcxLjQ1LTczSDEyOGE3Miw3MiwwLDAsMC03Miw3MlptMTYwLDQwVjE3Nkg0MHYyNEgyMTZaIj48L3BhdGg+PC9zdmc+");
+	mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xMjAsMTZWOGE4LDgsMCwwLDEsMTYsMHY4YTgsOCwwLDAsMS0xNiwwWm04MCwzMmE4LDgsMCwwLDAsNS42Ni0yLjM0bDgtOGE4LDgsMCwwLDAtMTEuMzItMTEuMzJsLTgsOEE4LDgsMCwwLDAsMjAwLDQ4Wk01MC4zNCw0NS42NkE4LDgsMCwwLDAsNjEuNjYsMzQuMzRsLTgtOEE4LDgsMCwwLDAsNDIuMzQsMzcuNjZabTg3LDI2LjQ1YTgsOCwwLDEsMC0yLjY0LDE1Ljc4QzE1My42Nyw5MS4wOCwxNjgsMTA4LjMyLDE2OCwxMjhhOCw4LDAsMCwwLDE2LDBDMTg0LDEwMC42LDE2My45Myw3Ni41NywxMzcuMzIsNzIuMTFaTTIzMiwxNzZ2MjRhMTYsMTYsMCwwLDEtMTYsMTZINDBhMTYsMTYsMCwwLDEtMTYtMTZWMTc2YTE2LDE2LDAsMCwxLDE2LTE2VjEyOGE4OCw4OCwwLDAsMSw4OC42Ny04OGM0OC4xNS4zNiw4Ny4zMyw0MC4yOSw4Ny4zMyw4OXYzMUExNiwxNiwwLDAsMSwyMzIsMTc2Wk01NiwxNjBIMjAwVjEyOWMwLTQwLTMyLjA1LTcyLjcxLTcxLjQ1LTczSDEyOGE3Miw3MiwwLDAsMC03Miw3MlptMTYwLDQwVjE3Nkg0MHYyNEgyMTZaIj48L3BhdGg+PC9zdmc+");
 }
 
 @each $type in 'note', 'tip', 'info', 'warning', 'danger' {
-    .alert.#{$type} {
-        @include alert-type($type);
-    }
+	.alert.#{$type} {
+		@include alert-type($type);
+	}
 }
 
 // Requires Zola >=0.21.0 and `markdown.github_alerts = true` set in your `config.toml`.
 @mixin alert-type-zola($type) {
-    @extend .alert;
+	@extend .alert;
 
-    border-color: var(--alert-#{$type}-border);
-    background-color: color-mix(in srgb, var(--alert-#{$type}-bg) 15%, transparent);
+	border-color: var(--alert-#{$type}-border);
+	background-color: color-mix(in srgb, var(--alert-#{$type}-bg) 15%, transparent);
 
-    &::before {
-        @extend .alert-icon;
-        @extend .alert-icon-#{$type};
+	&::before {
+		@extend .alert-icon;
+		@extend .alert-icon-#{$type};
 
-        content: '';
-        background-color: var(--alert-#{$type}-border);
-        margin-inline-start: 25px;
-    }
+		content: '';
+		background-color: var(--alert-#{$type}-border);
+		margin-inline-start: 25px;
+	}
 
-    >p {
-        &::before {
-            @extend .alert-title;
+	>p {
+		&::before {
+			@extend .alert-title;
 
-            content: to-upper-case($type);
-            color: var(--alert-#{$type}-border);
-            margin-block-end: 1rem;
-        }
+			content: to-upper-case($type);
+			color: var(--alert-#{$type}-border);
+			margin-block-end: 1rem;
+		}
 
-        &>code {
-            color: var(--alert-#{$type}-border);
-        }
+		&>code {
+			color: var(--alert-#{$type}-border);
+		}
 
-        @extend .alert-content;
-        margin-inline-start: unset;
-    }
+		@extend .alert-content;
+		margin-inline-start: unset;
+	}
 
-    a {
-        color: var(--alert-#{$type}-border);
-    }
+	a {
+		color: var(--alert-#{$type}-border);
+	}
 }
 
 @each $type in 'note', 'tip', 'important', 'warning', 'caution' {
-    .markdown-alert-#{$type} {
-        @include alert-type-zola($type);
-    }
+	.markdown-alert-#{$type} {
+		@include alert-type-zola($type);
+	}
 }

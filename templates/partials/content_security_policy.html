@@ -1,40 +1,52 @@
 {% if config.extra.content_security_policy.enable == true -%}
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'
-    {%- set allowed_domains = [] -%}
+	{%- set connect_src = "" -%}
+	{%- set script_src_elem = "" -%}
+	{%- set img_src = "" -%}
+	{%- set style_src_attr = "" -%}
+	{%- set other_directives = "" -%}
 
-    {#- Allow WebSocket protocol if served via `zola serve` -#}
-    {%- if config.mode == "serve" -%}
-        {%- set connect_src = load_data(literal=`{"directive": "connect-src", "domains": ["'self'", "ws:"]}`, format="json") -%}
-        {%- set script_src_elem = load_data(literal=`{"directive": "script-src-elem", "domains": ["'self'", "'unsafe-inline'"]}`, format="json") -%}
-        {%- set allowed_domains = allowed_domains | concat(with=connect_src) | concat(with=script_src_elem) -%}
-    {%- endif -%}
+	{#- Allow WebSocket protocol if served via `zola serve` -#}
+	{%- if config.mode == "serve" -%}
+		{%- set connect_src = "'self' ws:" -%}
+		{%- set script_src_elem = "'self' 'unsafe-inline'" -%}
+	{%- endif -%}
 
-    {#- Allow `data:` URL scheme if emoji-based favicon is used -#}
-    {%- if config.extra.favicon_emoji -%}
-        {%- set img_src = load_data(literal=`{"directive": "img-src", "domains":["'self'", "data:"]}`, format="json") -%}
-        {%- set allowed_domains = allowed_domains | concat(with=img_src) -%}
-    {%- endif -%}
+	{#- Allow `data:` URL scheme if emoji-based favicon is used -#}
+	{%- if config.extra.favicon_emoji -%}
+		{%- set img_src = "'self' data:" -%}
+	{%- endif -%}
 
-    {#- Allow inline CSS if Zola syntax highlighting uses inline styles -#}
-    {%- if config.markdown.highlighting.style == "inline" -%}
-        {%- set style_src = load_data(literal=`{"directive": "style-src-attr", "domains": ["'unsafe-inline'"]}`, format="json") -%}
-        {%- set allowed_domains = allowed_domains | concat(with=style_src) -%}
-    {%- endif -%}
+	{#- Allow inline CSS if Zola syntax highlighting uses inline styles -#}
+	{%- if config.markdown.highlighting.style == "inline" -%}
+		{%- set style_src_attr = "'unsafe-inline'" -%}
+	{%- endif -%}
 
-    {%- set extra_domains = config.extra.content_security_policy.allowed_domains -%}
-    {%- set allowed_domains = allowed_domains | concat(with=extra_domains) -%}
+	{#- Merge user-configured domains into the matching directive -#}
+	{%- for entry in config.extra.content_security_policy.allowed_domains | default(value=[]) -%}
+		{%- set entry_domains = entry.domains | join(sep=" ") -%}
+		{%- if entry.directive == "connect-src" -%}
+			{%- set_global connect_src = connect_src ~ " " ~ entry_domains -%}
+		{%- elif entry.directive == "script-src-elem" -%}
+			{%- set_global script_src_elem = script_src_elem ~ " " ~ entry_domains -%}
+		{%- elif entry.directive == "img-src" -%}
+			{%- set_global img_src = img_src ~ " " ~ entry_domains -%}
+		{%- elif entry.directive == "style-src-attr" -%}
+			{%- set_global style_src_attr = style_src_attr ~ " " ~ entry_domains -%}
+		{%- else -%}
+			{%- set_global other_directives = other_directives ~ "; " ~ entry.directive ~ " " ~ entry_domains -%}
+		{%- endif -%}
+	{%- endfor -%}
 
-    {%- for directive, entries in allowed_domains | group_by(attribute="directive") -%}
-        {%- set_global domains = [] -%}
+	{%- set connect_src = connect_src | trim -%}
+	{%- set script_src_elem = script_src_elem | trim -%}
+	{%- set img_src = img_src | trim -%}
+	{%- set style_src_attr = style_src_attr | trim -%}
 
-        {%- for entry in entries -%}
-            {%- set_global domains = domains | concat(with=entry.domains) | unique -%}
-        {%- endfor -%}
-
-        {%- set domains = domains | join(sep=" ") -%}
-        {%- if domains -%}
-            ; {{ directive }} {{ domains | safe }}
-        {%- endif -%}
-    {%- endfor -%}
+	{%- if connect_src -%}; connect-src {{ connect_src | safe }}{%- endif -%}
+	{%- if script_src_elem -%}; script-src-elem {{ script_src_elem | safe }}{%- endif -%}
+	{%- if img_src -%}; img-src {{ img_src | safe }}{%- endif -%}
+	{%- if style_src_attr -%}; style-src-attr {{ style_src_attr | safe }}{%- endif -%}
+	{{- other_directives | safe -}}
 ">
 {% endif -%}

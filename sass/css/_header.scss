@@ -1,51 +1,51 @@
 .header {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    margin: 32px;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-bottom: 1px solid var(--background-200);
-    @media (max-width: 684px) {
-        flex-direction: row;
-        margin: 16px;
-        padding-bottom: 12px;
-    }
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	margin: 32px;
+	top: 0;
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid var(--background-200);
+	@media (max-width: 684px) {
+		flex-direction: row;
+		margin: 16px;
+		padding-bottom: 12px;
+	}
 }
 
 .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex: 1;
 }
 
 .header-logo-container {
-    display: flex;
-    flex: 1;
-    font-family: "Fira Code";
+	display: flex;
+	flex: 1;
+	font-family: "IBM Plex Mono",monospace;
 
-    &::after {
-        content: '';
-        display: block;
-        margin-inline-start: 8px;
-        width: 100%;
-        /* background: repeating-linear-gradient(to right, var(--primary), var(--primary) 2px, transparent 0, transparent 10px); */
-    }
+	&::after {
+		content: '';
+		display: block;
+		margin-inline-start: 8px;
+		width: 100%;
+		/* background: repeating-linear-gradient(to right, var(--primary), var(--primary) 2px, transparent 0, transparent 10px); */
+	}
 
-    p {
-        flex: 0 0 auto;
-        margin: 0;
-        max-width: 100%;
-        text-decoration: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 12px;
-        font-family: "Fira Code";
+	p {
+		flex: 0 0 auto;
+		margin: 0;
+		max-width: 100%;
+		text-decoration: none;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 12px;
+		font-family: "IBM Plex Mono",monospace;
 
-        #current-path {
+		#current-path {
 			color: var(--primary);
 			text-overflow: ellipsis;
 			text-wrap: nowrap;
@@ -60,29 +60,29 @@
 					text-decoration: underline;
 				}
 			}
-        }
-    }
+		}
+	}
 }
 
 
 .logo {
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-    background: var(--primary);
-    color: var(--background);
-    font-weight: bold;
-    text-decoration: none;
+	display: flex;
+	align-items: center;
+	padding: 5px 10px;
+	background: var(--primary);
+	color: var(--background);
+	font-weight: bold;
+	text-decoration: none;
 }
 
 .logo-img {
-    display: inline;
-    height: var(--line-height);
-    margin: 0px;
+	display: inline;
+	height: var(--line-height);
+	margin: 0px;
 }
 
 @media print {
-    .header {
-        display: none;
-    }
+	.header {
+		display: none;
+	}
 }

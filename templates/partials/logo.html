@@ -1,7 +1,17 @@
+{%- if "logo_base_url" in config.extra -%}
+	{%- set logo_url = config.extra.logo_base_url -%}
+{%- else -%}
+	{%- set logo_url = config.base_url -%}
+{%- endif -%}
+{%- if "header_title" in config.extra -%}
+	{%- set header_title = config.extra.header_title -%}
+{%- else -%}
+	{%- set header_title = config.title -%}
+{%- endif -%}
 <p>
-    <a class="logo" href="{{ config.extra.logo_base_url | default(value=config.base_url) | safe }}">
-            {{ config.extra.header_title | default(value=config.title) | safe }}
-    </a>
-    <span id="current-path">
-    </span>
+	<a class="logo" href="{{ logo_url | safe }}">
+			{{ header_title | safe }}
+	</a>
+	<span id="current-path">
+	</span>
 </p>

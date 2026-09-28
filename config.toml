@@ -25,8 +25,8 @@ author = "sudoer"
 #     ]
 #
 taxonomies = [
-    { name = "tags", feed = true },
-    { name = "categories", feed = true, paginate_by = 5 },
+	{ name = "tags", feed = true },
+	{ name = "categories", feed = true, paginate_by = 5 },
 ]
 
 # Whether to build a search index to be used later on by a JavaScript library
@@ -63,23 +63,24 @@ layout = "center"
 show_default_author = false
 
 main_menu = [
-    { name = "blog", url = "/blog", trailing_slash = true },
-    { name = "tags", url = "/tags", trailing_slash = true },
-    { name = "rss", url = "/rss.xml", trailing_slash = true },
+	{ name = "blog", url = "/blog", trailing_slash = true },
+	{ name = "tags", url = "/blog/tags", trailing_slash = true },
+	{ name = "categories", url = "/blog/categories", trailing_slash = true },
+	{ name = "rss", url = "/blog/rss.xml", trailing_slash = true },
 ]
 
 socials = [
-    { name = "email", url = "mailto:tharunkumar8906@gmail.com" },
-    { name = "github", url = "https://github.com/sudo-ers" },
-    { name = "linkedin", url = "https://www.linkedin.com/in/a-tharun-kumar" },
-    { name = "mastodon", url = "https://mastodon.social/@sudoers" },
+	{ name = "email", url = "mailto:tharunkumar8906@gmail.com" },
+	{ name = "github", url = "https://github.com/sudo-ers" },
+	{ name = "linkedin", url = "https://www.linkedin.com/in/a-tharun-kumar" },
+	{ name = "mastodon", url = "https://mastodon.social/@sudoers" },
 ]
 
 [extra.content_security_policy]
 enable = true
 allowed_domains = [
-    { directive = "base-uri", domains = ["'self'"] },
-    { directive = "form-action", domains = ["'self'"] },
+	{ directive = "base-uri", domains = ["'self'"] },
+	{ directive = "form-action", domains = ["'self'"] },
 ]
 
 [extra.responsive_images]

@@ -5,11 +5,13 @@
 {%- endblock -%}
 
 {%- block description -%}
-    {%- if page.description %}
-    <meta name="description" content="{{ page.description | markdown(inline=true) | striptags }}">
-    {%- elif page.summary %}
-    <meta name="description" content="{{ page.summary | linebreaksbr | replace(from="<br>", to=" ") | striptags | trim_end_matches(pat=".") | safe }}…">
-    {%- endif %}
+	{%- if page.description %}
+	<meta name="description" content="{{ page.description | markdown(inline=true) | striptags }}">
+	{%- elif page.summary %}
+	{%- set lb = <linebreaks_br value={page.summary} /> -%}
+	{%- set d = lb | replace(from="<br>", to=" ") | striptags -%}
+	<meta name="description" content="{{ <trim_end value={d} pat="." /> | safe }}…">
+	{%- endif %}
 {%- endblock -%}
 
 {%- block main -%}
@@ -17,28 +19,28 @@
 <article class="post content">
 
 
-    {{ post_macros::header(page=page, heading="h1") | indent | safe }}
-{%- endfilter %}{%- endfilter %}
+	{{ <header page={page} config={config} heading="h1"/> }}
+	{%- endfilter %}{%- endfilter %}
 
 	{% if page.toc %}
 	<div class="toc">
 		<h3 class="toc-title">Table of Contents</h3>
-    <ol>
-    {% for h1 in page.toc %}
-        <li>
-            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-            {% if h1.children %}
-                <ol>
-                    {% for h2 in h1.children %}
-                        <li>
-                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                        </li>
-                    {% endfor %}
-                </ol>
-            {% endif %}
-        </li>
-    {% endfor %}
-    </ol>
+	<ol>
+	{% for h1 in page.toc %}
+		<li>
+			<a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+			{% if h1.children %}
+				<ol>
+					{% for h2 in h1.children %}
+						<li>
+							<a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+						</li>
+					{% endfor %}
+				</ol>
+			{% endif %}
+		</li>
+	{% endfor %}
+	</ol>
 	</div>
 {% endif %}
 {{ page.content | safe }}
@@ -47,29 +49,29 @@
 </article>
 {%- if page.lower or page.higher %}
 <nav class="post-navigation">
-    <header class="post-navigation-title">
-        <h2>Read More Posts</h2>
-        <hr>
-    </header>
-    <div class="post-navigation-buttons">
-        {%- if page.lower %}
-        <a rel="next" href="{{ page.lower.permalink | safe }}" aria-label="Next article">
-            <span aria-hidden="true">&lt;&nbsp;[</span>
-            {{- page.lower.title | truncate(value=100, end="…") -}}
-            <span aria-hidden="true">]</span>
-        </a>
-        {%- endif %}
-        {%- if page.lower and page.higher %}
-        <span aria-hidden="true" role="separator">|</span>
-        {%- endif %}
-        {%- if page.higher %}
-        <a rel="prev" href="{{ page.higher.permalink | safe }}" aria-label="Prev article">
-            <span aria-hidden="true">[</span>
-            {{- page.higher.title | truncate(value=100, end="…") -}}
-            <span aria-hidden="true">]&nbsp;&gt;</span>
-        </a>
-        {%- endif %}
-    </div>
+	<header class="post-navigation-title">
+		<h2>Read More Posts</h2>
+		<hr>
+	</header>
+	<div class="post-navigation-buttons">
+		{%- if page.lower %}
+		<a rel="next" href="{{ page.lower.permalink | safe }}" aria-label="Next article">
+			<span aria-hidden="true">&lt;&nbsp;[</span>
+			{{- page.lower.title | truncate(length=100, end="…") -}}
+			<span aria-hidden="true">]</span>
+		</a>
+		{%- endif %}
+		{%- if page.lower and page.higher %}
+		<span aria-hidden="true" role="separator">|</span>
+		{%- endif %}
+		{%- if page.higher %}
+		<a rel="prev" href="{{ page.higher.permalink | safe }}" aria-label="Prev article">
+			<span aria-hidden="true">[</span>
+			{{- page.higher.title | truncate(length=100, end="…") -}}
+			<span aria-hidden="true">]&nbsp;&gt;</span>
+		</a>
+		{%- endif %}
+	</div>
 </nav>
 {%- endif %}
 {% include "partials/comments.html" -%}

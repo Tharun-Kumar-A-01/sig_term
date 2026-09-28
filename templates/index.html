@@ -1,64 +1,58 @@
 {% extends "base.html" %}
-{% block custom_fonts %}
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&family=Source+Serif+4:ital,opsz@1,8..60&display=swap');
-		
-		.noto-serif-tamil-styled {
-			font-family: "Noto Serif Tamil", serif;
-			font-optical-sizing: auto;
-			font-weight: 400;
-			font-style: normal;
-			font-variation-settings: "wdth" 100;
-		}
-
-		.source-serif-4-styled {
-			font-family: "Source Serif 4", serif;
-			font-optical-sizing: auto;
-			font-weight: 400;
-			font-style: italic;
-		}
-	</style>
-{% endblock %}
 {%- block main -%}
 {%- filter indent -%}{%- filter indent -%}
 {%- if section.content -%}
-<header class="content {%- if section.extra.framed %} framed{%- endif -%}">
-    {{ section.content | indent | safe }}
+<header class="content {%- if "framed" in section.extra and section.extra.framed %} framed{%- endif -%}">
+	{{ section.content | indent | safe }}
 </header>
 {% endif -%}
 
 {#- Display partial content from "featured section", e.g. "/blog/". -#}
 {#- Otherwise, render as a normal Zola homepage (only show posts under "/"). -#}
-{%- if section.extra.section_path -%}
-    {%- set blog_section = get_section(path=section.extra.section_path) -%}
-    {%- set num_top_posts = section.extra.max_posts | default(value=blog_section.pages | length) -%}
-    {%- if blog_section.paginate_reversed == true -%}
-        {%- set top_posts = blog_section.pages | reverse | slice(end=num_top_posts) -%}
-    {%- else -%}
-        {%- set top_posts = blog_section.pages | slice(end=num_top_posts) -%}
-    {%- endif -%}
+{%- set max_items = 1000000 -%}
+{%- set top_posts = [] -%}
+{%- if "section_path" in section.extra -%}
+	{%- set blog_section = get_section(path=section.extra.section_path) -%}
+	{%- if "max_posts" in section.extra -%}
+		{%- set max_items = section.extra.max_posts -%}
+	{%- else -%}
+		{%- set max_items = blog_section.pages | length -%}
+	{%- endif -%}
+	{%- if blog_section.paginate_reversed == true -%}
+		{%- set top_posts = blog_section.pages | reverse -%}
+	{%- else -%}
+		{%- set top_posts = blog_section.pages -%}
+	{%- endif -%}
 {%- endif -%}
 
-{% for page in paginator.pages | default(value=top_posts) -%}
-{{ post_macros::excerpt(page=page) }}
+{%- if paginator is defined -%}
+	{%- set posts = paginator.pages -%}
+{%- else -%}
+	{%- set posts = top_posts -%}
+{%- endif -%}
+
+{% for page in posts -%}
+	{%- if paginator is defined or loop.index <= max_items -%}
+		{{ <excerpt page={page} config={config} /> }}
+	{% endif -%}
 {% endfor -%}
 
-{%- if paginator and paginator.number_pagers > 1 %}
+{%- if paginator is defined and paginator.number_pagers > 1 %}
 <nav class="pagination">
-    <ul>
-        {%- if paginator.previous %}
-        <li><a rel="prev" href="{{ paginator.previous | safe }}" aria-label="newer posts">&lt;&nbsp;[newer posts]</a></li>
-        {%- endif %}
-        {%- if paginator.next %}
-        <li><a rel="next" href="{{ paginator.next | safe }}" aria-label="older posts">[older posts]&nbsp;&gt;</a></li>
-        {%- endif %}
-    </ul>
+	<ul>
+		{%- if paginator.previous %}
+		<li><a rel="prev" href="{{ paginator.previous | safe }}" aria-label="newer posts">&lt;&nbsp;[newer posts]</a></li>
+		{%- endif %}
+		{%- if paginator.next %}
+		<li><a rel="next" href="{{ paginator.next | safe }}" aria-label="older posts">[older posts]&nbsp;&gt;</a></li>
+		{%- endif %}
+	</ul>
 </nav>
-{%- elif blog_section.paginate_by and blog_section.paginate_by < blog_section.pages | length %}
+{%- elif blog_section is defined and blog_section.paginate_by and blog_section.paginate_by < blog_section.pages | length %}
 <nav class="pagination">
-    <ul>
-        <li><a href="{{ blog_section.permalink | safe }}" aria-label="all posts">[all posts]&nbsp;&gt;</a></li>
-    </ul>
+	<ul>
+		<li><a href="{{ blog_section.permalink | safe }}" aria-label="all posts">[all posts]&nbsp;&gt;</a></li>
+	</ul>
 </nav>
 {%- endif %}
 {%- endfilter -%}{%- endfilter -%}

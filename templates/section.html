@@ -5,35 +5,40 @@
 {%- endblock -%}
 
 {%- block description -%}
-    {%- if section.description %}
-    <meta name="description" content="{{ section.description | markdown(inline=true) | striptags | safe }}">
-    {%- elif config.description %}
-    <meta name="description" content="{{ config.description | safe }}">
-    {%- endif %}
+	{%- if section.description %}
+	<meta name="description" content="{{ section.description | markdown(inline=true) | striptags | safe }}">
+	{%- elif config.description %}
+	<meta name="description" content="{{ config.description | safe }}">
+	{%- endif %}
 {%- endblock -%}
 
 {%- block main -%}
 {%- filter indent -%}{%- filter indent -%}
 {%- if section.content -%}
-<header class="content {%- if section.extra.framed %} framed{%- endif -%}">
-    {{ section.content | indent | safe }}
+<header class="content {%- if "framed" in section.extra and section.extra.framed %} framed{%- endif -%}">
+	{{ section.content | indent | safe }}
 </header>
 {% endif -%}
 
-{% for page in paginator.pages | default(value=section.pages) -%}
-{{ post_macros::excerpt(page=page) }}
+{%- if paginator is defined -%}
+	{%- set pages = paginator.pages -%}
+{%- else -%}
+	{%- set pages = section.pages -%}
+{%- endif -%}
+{% for page in pages -%}
+{{ <excerpt page={page} config={config} /> }}
 {% endfor -%}
 
-{%- if paginator and paginator.number_pagers > 1 %}
+{%- if paginator is defined and paginator.number_pagers > 1 %}
 <nav class="pagination">
-    <ul>
-        {%- if paginator.previous %}
-        <li><a rel="prev" href="{{ paginator.previous | safe }}" aria-label="newer posts">&lt;&nbsp;[newer posts]</a></li>
-        {%- endif %}
-        {%- if paginator.next %}
-        <li><a rel="next" href="{{ paginator.next | safe }}" aria-label="older posts">[older posts]&nbsp;&gt;</a></li>
-        {%- endif %}
-    </ul>
+	<ul>
+		{%- if paginator.previous %}
+		<li><a rel="prev" href="{{ paginator.previous | safe }}" aria-label="newer posts">&lt;&nbsp;[newer posts]</a></li>
+		{%- endif %}
+		{%- if paginator.next %}
+		<li><a rel="next" href="{{ paginator.next | safe }}" aria-label="older posts">[older posts]&nbsp;&gt;</a></li>
+		{%- endif %}
+	</ul>
 </nav>
 {%- endif %}
 {% endfilter %}{% endfilter %}

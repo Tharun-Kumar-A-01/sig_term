@@ -1,47 +1,47 @@
 figure.mastodon-post {
-    position: relative;
-    border-left: 1px solid var(--primary);
-    margin: 0;
-    padding: 70px 25px 25px;
+	position: relative;
+	border-left: 1px solid var(--primary);
+	margin: 0;
+	padding: 70px 25px 25px;
 
-    &::before {
-        mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xODQsMzJINzJBNDAsNDAsMCwwLDAsMzIsNzJWMTkyYTQwLDQwLDAsMCwwLDQwLDQwaDg4YTgsOCwwLDAsMCwwLTE2SDcyYTI0LDI0LDAsMCwxLTI0LTI0di04SDE4NGE0MCw0MCwwLDAsMCw0MC00MFY3MkE0MCw0MCwwLDAsMCwxODQsMzJabTI0LDExMmEyNCwyNCwwLDAsMS0yNCwyNEg0OFY3MkEyNCwyNCwwLDAsMSw3Miw0OEgxODRhMjQsMjQsMCwwLDEsMjQsMjRabS0yNC00MHYzMmE4LDgsMCwwLDEtMTYsMFYxMDRhMTYsMTYsMCwwLDAtMzIsMHYzMmE4LDgsMCwwLDEtMTYsMFYxMDRhMTYsMTYsMCwwLDAtMzIsMHYzMmE4LDgsMCwwLDEtMTYsMFYxMDRhMzIsMzIsMCwwLDEsNTYtMjEuMTNBMzIsMzIsMCwwLDEsMTg0LDEwNFoiPjwvcGF0aD48L3N2Zz4=");
-        content: "";
-        background-color: var(--primary);
-        height: 36px;
-        width: 36px;
-        position: absolute;
-        top: 20px;
-        inset-inline-start: 20px;
-        display: block;
-        color: var(--primary);
-        font-weight: bold;
-    }
+	&::before {
+		mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xODQsMzJINzJBNDAsNDAsMCwwLDAsMzIsNzJWMTkyYTQwLDQwLDAsMCwwLDQwLDQwaDg4YTgsOCwwLDAsMCwwLTE2SDcyYTI0LDI0LDAsMCwxLTI0LTI0di04SDE4NGE0MCw0MCwwLDAsMCw0MC00MFY3MkE0MCw0MCwwLDAsMCwxODQsMzJabTI0LDExMmEyNCwyNCwwLDAsMS0yNCwyNEg0OFY3MkEyNCwyNCwwLDAsMSw3Miw0OEgxODRhMjQsMjQsMCwwLDEsMjQsMjRabS0yNC00MHYzMmE4LDgsMCwwLDEtMTYsMFYxMDRhMTYsMTYsMCwwLDAtMzIsMHYzMmE4LDgsMCwwLDEtMTYsMFYxMDRhMTYsMTYsMCwwLDAtMzIsMHYzMmE4LDgsMCwwLDEtMTYsMFYxMDRhMzIsMzIsMCwwLDEsNTYtMjEuMTNBMzIsMzIsMCwwLDEsMTg0LDEwNFoiPjwvcGF0aD48L3N2Zz4=");
+		content: "";
+		background-color: var(--primary);
+		height: 36px;
+		width: 36px;
+		position: absolute;
+		top: 20px;
+		inset-inline-start: 20px;
+		display: block;
+		color: var(--primary);
+		font-weight: bold;
+	}
 
-    blockquote {
-        padding: unset;
-        border: unset;
-        overflow-wrap: anywhere;
+	blockquote {
+		padding: unset;
+		border: unset;
+		overflow-wrap: anywhere;
 
-        &::before {
-            content: none;
-        }
-    }
+		&::before {
+			content: none;
+		}
+	}
 
-    figcaption {
-        margin-top: 25px;
-    }
+	figcaption {
+		margin-top: 25px;
+	}
 }
 
 .references-list p {
-    text-indent: -2.4rem;
-    margin-inline-start: 2.4rem;
+	text-indent: -2.4rem;
+	margin-inline-start: 2.4rem;
 }
 
 .wide-container {
-    margin: 0;
+	margin: 0;
 
-    @media (max-width: 684px) {
-        overflow-x: auto;
-    }
+	@media (max-width: 684px) {
+		overflow-x: auto;
+	}
 }

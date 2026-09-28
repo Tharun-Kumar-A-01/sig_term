@@ -1,11 +1,11 @@
 <div class="header-container">
-    <span class="header-logo-container">
-        {% filter indent -%}{%- filter indent -%}
-        {% include "partials/logo.html" %}
-        {%- endfilter -%}{%- endfilter %}
+	<span class="header-logo-container">
+		{% filter indent -%}{%- filter indent -%}
+		{% include "partials/logo.html" %}
+		{%- endfilter -%}{%- endfilter %}
 
-    </span>
+	</span>
 </div>
-{% if config.extra.main_menu -%}
+{% if "main_menu" in config.extra and config.extra.main_menu -%}
 {% include "partials/menu.html" %}
 {%- endif %}

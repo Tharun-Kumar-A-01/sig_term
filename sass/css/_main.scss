@@ -1,107 +1,117 @@
 $max-layout-width: 864px;
 
 :root {
-    --font-size: 1rem;
-    --line-height: 1.54em;
-    --radius: 0;
-
-    @media (max-width: 684px) {
-        --font-size: 0.95rem;
-    }
+	--font-size: 1rem;
+	--line-height: 1.54em;
+	--radius: 0;
+	--serif-font: 'IBM Plex Serif', serif;
+	--sans-serif-font: 'IBM Plex Sans', sans-serif;
+	--monospace-font: 'Fira Code', Monaco, Consolas, 'Ubuntu Mono', monospace;
+	
+	@media (max-width: 684px) {
+		--font-size: 0.95rem;
+	}
 }
 
 html {
-    box-sizing: border-box;
-    accent-color: var(--primary);
-    scrollbar-color: var(--primary) transparent;
+	box-sizing: border-box;
+	accent-color: var(--primary);
+	scrollbar-color: var(--primary) transparent;
 
-    @media (prefers-reduced-motion: no-preference) {
-        scroll-behavior: smooth;
-    }
+	@media (prefers-reduced-motion: no-preference) {
+		scroll-behavior: smooth;
+	}
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Fira Code', Monaco, Consolas, 'Ubuntu Mono', monospace;
-    font-size: var(--font-size);
-    line-height: var(--line-height);
-    background: var(--background);
-    color: var(--text);
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-    text-size-adjust: 100%;
-    font-feature-settings: 'liga';
+	margin: 0;
+	padding: 0;
+	font-family: 'Fira Code', Monaco, Consolas, 'Ubuntu Mono', monospace;
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	background: var(--background);
+	color: var(--text);
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
+	text-size-adjust: 100%;
+	font-feature-settings: 'liga';
 
-    &.layout-left,
-    &.layout-center,
-    &.layout-full-width {
-        display: flex;
-        flex-direction: column;
-        padding: 164px 40px 40px;
-        max-width: $max-layout-width;
-        min-height: 100vh;
-        border-inline-end: 1px solid color-mix(in srgb, var(--primary) 10%, transparent);
+	&.layout-left,
+	&.layout-center,
+	&.layout-full-width {
+		display: flex;
+		flex-direction: column;
+		padding: 164px 40px 40px;
+		max-width: $max-layout-width;
+		min-height: 100vh;
+		border-inline-end: 1px solid color-mix(in srgb, var(--primary) 10%, transparent);
 
-        @media (max-width: 684px) {
-            padding: 64px 20px 20px;
-        }
-    }
+		@media (max-width: 684px) {
+			padding: 64px 20px 20px;
+		}
+	}
 
-    &.layout-center,
-    &.layout-full-width {
-        border: none;
-        margin: 0 auto;
-    }
+	&.layout-center,
+	&.layout-full-width {
+		border: none;
+		margin: 0 auto;
+	}
 
-    &.layout-full-width {
-        max-width: 100%;
-    }
+	&.layout-full-width {
+		max-width: 100%;
+	}
 }
 
 main {
-    overflow-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 h1 {
-    font-size: calc(var(--font-size) * 2.35);
-    letter-spacing: 0;
-    font-family: 'Newsreader';
-    margin:  48px 0 24px;
-    line-height: calc(var(--font-size) * 2.45);
+	font-size: calc(var(--font-size) * 2.35);
+	letter-spacing: 0;
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 500;
+	margin:  48px 0 24px;
+	line-height: calc(var(--font-size) * 2.45);
 }
 
 h2 {
-    font-size: calc(var(--font-size) * 1.95);
-    letter-spacing: 0;
-    font-family: 'Newsreader';
-    line-height: calc(var(--font-size) * 2.05);
-    margin:  48px 0 24px;
+	font-size: calc(var(--font-size) * 1.95);
+	letter-spacing: 0;
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 500;
+	// font-style: italic;
+	line-height: calc(var(--font-size) * 2.05);
+	margin:  48px 0 24px;
 }
 
 h3 {
-    font-size: calc(var(--font-size) * 1.75);
-    letter-spacing: 0;
-    font-family: 'Newsreader';
-    line-height: calc(var(--font-size) * 1.85);
-    margin:  48px 0 24px;
+	font-size: calc(var(--font-size) * 1.75);
+	letter-spacing: 0;
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 500;
+	// font-style: italic;
+	line-height: calc(var(--font-size) * 1.85);
+	margin:  48px 0 24px;
 }
 
 h4,
 h5,
 h6 {
-    font-size: calc(var(--font-size) * 1.35);
-    letter-spacing: 0;
-    font-family: 'Newsreader';
-    margin:  48px 0 24px;
-    line-height: calc(var(--font-size) * 1.45);
+	font-size: calc(var(--font-size) * 1.35);
+	letter-spacing: 0;
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 500;
+	// font-style: italic;
+	margin:  48px 0 24px;
+	line-height: calc(var(--font-size) * 1.45);
 }
 
 p,
@@ -111,331 +121,331 @@ img,
 figure,
 video,
 table {
-    margin: 25px 0;
-    font-family: "Fira Sans",sans-serif;
+	margin: 25px 0;
+	font-family: "IBM Plex Sans", sans-serif;
 }
 
 a {
-    color: var(--primary);
-    font-family: "Fira Code";
-    outline: none;
-    &.read-more {
-        text-decoration: none;
-    }
+	color: var(--primary);
+	font-family: "IBM Plex Mono",monospace;
+	outline: none;
+	&.read-more {
+		text-decoration: none;
+	}
 }
 
 button {
-    position: relative;
-    font: inherit;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    align-items: center;
-    background: transparent;
-    color: var(--primary);
-    padding: 7px 18px;
-    border: 1px solid var(--primary);
-    border-radius: var(--radius);
-    /* transition: background 0.15s linear; */
-    appearance: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    outline: none;
-    font-family: "Fira Code";
+	position: relative;
+	font: inherit;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	align-items: center;
+	background: transparent;
+	color: var(--primary);
+	padding: 7px 18px;
+	border: 1px solid var(--primary);
+	border-radius: var(--radius);
+	/* transition: background 0.15s linear; */
+	appearance: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	outline: none;
+	font-family: "IBM Plex Mono",monospace;
 
-    &:hover {
-        background:var(--primary);
-        color: var(--background);
-    }
+	&:hover {
+		background:var(--primary);
+		color: var(--background);
+	}
 }
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-    outline: 1px solid var(--primary);
-    outline-offset: 2px;
+	outline: 1px solid var(--primary);
+	outline-offset: 2px;
 }
 
 input {
-    border: 1px solid var(--text);
-    border-radius: var(--radius);
-    padding: 10px;
-    background: transparent;
-    color: var(--text);
-    appearance: none;
+	border: 1px solid var(--text);
+	border-radius: var(--radius);
+	padding: 10px;
+	background: transparent;
+	color: var(--text);
+	appearance: none;
 
-    &[type="checkbox"] {
-        padding: 10px;
-        vertical-align: middle;
-        box-shadow: inset 0 0 0 3px var(--background);
+	&[type="checkbox"] {
+		padding: 10px;
+		vertical-align: middle;
+		box-shadow: inset 0 0 0 3px var(--background);
 
-        &:active {
-            box-shadow: none;
-        }
+		&:active {
+			box-shadow: none;
+		}
 
-        &:checked {
-            background: var(--primary);
-        }
-    }
+		&:checked {
+			background: var(--primary);
+		}
+	}
 }
 
 img,
 video {
-    display: block;
-    max-inline-size: 100%;
-    block-size: auto;
+	display: block;
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
 figure {
-    margin: 0 auto;
-    width: fit-content;
+	margin: 0 auto;
+	width: fit-content;
 
-    img,
-    video {
-        margin: 0 auto;
-    }
+	img,
+	video {
+		margin: 0 auto;
+	}
 
-    &:not(.mastodon-post) {
-        figcaption {
-            background: var(--primary);
-            color: var(--background);
-            text-align: center;
-            font-size: var(--font-size);
-            font-weight: normal;
-            margin-top: 5px;
-            padding: 5px 8px;
-            border-radius: 0 0 var(--radius) var(--radius);
+	&:not(.mastodon-post) {
+		figcaption {
+			background: var(--primary);
+			color: var(--background);
+			text-align: center;
+			font-size: var(--font-size);
+			font-weight: normal;
+			margin-top: 5px;
+			padding: 5px 8px;
+			border-radius: 0 0 var(--radius) var(--radius);
 
-            a {
-                color: var(--background);
-            }
+			a {
+				color: var(--background);
+			}
 
-            p:first-child {
-                margin: 0;
-            }
-        }
-    }
+			p:first-child {
+				margin: 0;
+			}
+		}
+	}
 }
 
 ul,
 ol {
-    margin-inline-start: 4ch;
-    padding: 0;
+	margin-inline-start: 4ch;
+	padding: 0;
 
-    ul,
-    ol {
-        margin-block: 5px;
-    }
+	ul,
+	ol {
+		margin-block: 5px;
+	}
 
-    li {
-        position: relative;
+	li {
+		position: relative;
 
-        &::marker {
-        font-family: "Fira Code";
-            color: var(--primary);
-        }
-    }
+		&::marker {
+		font-family: "IBM Plex Mono",monospace;
+			color: var(--primary);
+		}
+	}
 }
 
 @mixin preformatted {
-    font-family:
-        'Fira Code',
-        Monaco,
-        Consolas,
-        'Ubuntu Mono',
-        monospace !important;
-    font-feature-settings: normal;
-    background: color-mix(in srgb, var(--text) 5%, transparent);
-    border: 1px solid var(--code-border);
-    padding: 1px 6px;
-    margin: 0 2px;
-    font-size: calc(var(--font-size) * 0.95);
+	font-family:
+		'IBM Plex Mono',
+		Monaco,
+		Consolas,
+		'Ubuntu Mono',
+		monospace !important;
+	font-feature-settings: normal;
+	background: color-mix(in srgb, var(--text) 5%, transparent);
+	border: 1px solid var(--code-border);
+	padding: 1px 6px;
+	margin: 0 2px;
+	font-size: calc(var(--font-size) * 0.95);
 }
 
 code {
-    @include preformatted;
+	@include preformatted;
 
-    color: var(--primary);
+	color: var(--primary);
 
-    code {
-        background: transparent;
-        padding: 0;
-        margin: 0;
-    }
+	code {
+		background: transparent;
+		padding: 0;
+		margin: 0;
+	}
 }
 
 kbd {
-    @include preformatted;
+	@include preformatted;
 
-    border-top: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
-    border-left: 1px solid var(--primary);
-    border-right: 1px solid var(--primary);
-    border-bottom: 4px solid var(--primary);
-    border-radius: 4px;
+	border-top: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+	border-left: 1px solid var(--primary);
+	border-right: 1px solid var(--primary);
+	border-bottom: 4px solid var(--primary);
+	border-radius: 4px;
 }
 
 pre {
-    tab-size: 4;
-    background: color-mix(in srgb, var(--text) 5%, transparent);
-    color: var(--text);
-    padding: 10px;
-    font-size: calc(var(--font-size) * 0.95) !important;
-    overflow: auto;
-    border-radius: var(--radius);
-    border: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
-    direction: ltr;
+	tab-size: 4;
+	background: color-mix(in srgb, var(--text) 5%, transparent);
+	color: var(--text);
+	padding: 10px;
+	font-size: calc(var(--font-size) * 0.95) !important;
+	overflow: auto;
+	border-radius: var(--radius);
+	border: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+	direction: ltr;
 
-    code {
-        background: unset;
-        color: unset;
-        margin: 0;
-        padding: 0;
-        border: none;
+	code {
+		background: unset;
+		color: unset;
+		margin: 0;
+		padding: 0;
+		border: none;
 
-        mark {
-            display: block;
-            min-width: fit-content;
-        }
-    }
+		mark {
+			display: block;
+			min-width: fit-content;
+		}
+	}
 }
 
 abbr {
-    position: relative;
-    text-decoration-style: dashed;
-    text-decoration-color: var(--primary);
-    cursor: help;
+	position: relative;
+	text-decoration-style: dashed;
+	text-decoration-color: var(--primary);
+	cursor: help;
 }
 
 sub {
-    bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 sup {
-    line-height: 0;
-    top: -0.25em;
+	line-height: 0;
+	top: -0.25em;
 }
 
 mark {
-    background: var(--primary-200);
-    color: var(--text);
+	background: var(--primary-200);
+	color: var(--text);
 }
 
 blockquote {
-    position: relative;
-    border-left: 1px solid var(--primary);
-    margin: 0;
-    padding: 25px;
+	position: relative;
+	border-left: 1px solid var(--primary);
+	margin: 0;
+	padding: 25px;
 
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        inset-inline-start: 0;
-        color: var(--primary);
-    }
-    &::after {
-        content: '“';
-        font-family: "Fira Code";
-        display: block;
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        font-size: 1.4rem;
-        color: var(--primary);
-    }
-    &.markdown-alert-tip, &.markdown-alert-warning, &.markdown-alert-note , &.markdown-alert-important, &.markdown-alert-caution {
-        &::after {
-            content: '';
-        }
-        p::before {
-        font-family: "Fira Code";
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		inset-inline-start: 0;
+		color: var(--primary);
+	}
+	&::after {
+		content: '“';
+		font-family: "IBM Plex Mono",monospace;
+		display: block;
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		font-size: 1.4rem;
+		color: var(--primary);
+	}
+	&.markdown-alert-tip, &.markdown-alert-warning, &.markdown-alert-note , &.markdown-alert-important, &.markdown-alert-caution {
+		&::after {
+			content: '';
+		}
+		p::before {
+		font-family: "IBM Plex Mono",monospace;
 
-        }
-    }
-    p:first-child {
-        margin-top: 0;
-    }
+		}
+	}
+	p:first-child {
+		margin-top: 0;
+	}
 
-    p:last-child {
-        margin-bottom: 0;
-    }
+	p:last-child {
+		margin-bottom: 0;
+	}
 }
 
 table {
-    border-collapse: collapse;
-    display: block;
-    overflow-y: scroll;
-    th,
-    td {
-        border: 1px solid var(--background-400);
-        padding: 10px;
-    }
+	border-collapse: collapse;
+	display: block;
+	overflow-x: auto;
+	th,
+	td {
+		border: 1px solid var(--background-400);
+		padding: 10px;
+	}
 
-    th {
-        border-style: solid;
-        font-family: "Fira Code";
-        color: var(--text);
-        background-color: var(--background-100);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-    }
+	th {
+		border-style: solid;
+		font-family: "IBM Plex Mono",monospace;
+		color: var(--text);
+		background-color: var(--background-100);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
 }
 
 hr {
-    width: 100%;
-    height: 1px;
-    border: none;
-    margin: 48px 0;
-    background: var(--background-200);
+	width: 100%;
+	height: 1px;
+	border: none;
+	margin: 48px 0;
+	background: var(--background-200);
 }
 
 details {
-    position: relative;
-    margin: 25px 0;
-    width: 100%;
-    border: 1px solid var(--primary);
+	position: relative;
+	margin: 25px 0;
+	width: 100%;
+	border: 1px solid var(--primary);
 
-    >summary {
-        padding: 3px 10px;
-        color: var(--primary);
-        transition: background 0.15s linear;
+	>summary {
+		padding: 3px 10px;
+		color: var(--primary);
+		transition: background 0.15s linear;
 
-        &:hover {
-            background: color-mix(in srgb, var(--primary) 10%, transparent);
-        }
+		&:hover {
+			background: color-mix(in srgb, var(--primary) 10%, transparent);
+		}
 
-        &::marker {
-            content: none;
-        }
+		&::marker {
+			content: none;
+		}
 
-        // Display a down-facing caret using border trick.
-        &::before {
-            display: inline-block;
-            content: '';
-            border: 0.35rem solid transparent;
-            border-top-color: var(--primary);
-            margin-inline: 0.3em 0.75rem;
-            transform: rotate(-90deg);
-            transition: transform 0.1s ease-out;
-        }
-    }
+		// Display a down-facing caret using border trick.
+		&::before {
+			display: inline-block;
+			content: '';
+			border: 0.35rem solid transparent;
+			border-top-color: var(--primary);
+			margin-inline: 0.3em 0.75rem;
+			transform: rotate(-90deg);
+			transition: transform 0.1s ease-out;
+		}
+	}
 
-    &[open]>summary::before {
-        transform: translateY(0.15rem);
-    }
+	&[open]>summary::before {
+		transform: translateY(0.15rem);
+	}
 
-    >:not(img, pre > code, summary) {
-        margin-inline: 15px;
+	>:not(img, pre > code, summary) {
+		margin-inline: 15px;
 
-        &:first-of-type {
-            margin-top: 15px;
-        }
+		&:first-of-type {
+			margin-top: 15px;
+		}
 
-        &:last-child {
-            margin-bottom: 15px;
-        }
-    }
+		&:last-child {
+			margin-bottom: 15px;
+		}
+	}
 }
 
 .katex {
@@ -451,7 +461,7 @@ details {
 	text-align: center;
 	&>#home-title {
 		font-size: 8rem;
-		font-family: "Fira Code";
+		font-family: "IBM Plex Mono",monospace;
 		color: var(--primary);
 		@media (max-width: 684px) {
 			font-size: 6rem;

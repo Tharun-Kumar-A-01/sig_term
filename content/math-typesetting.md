@@ -14,7 +14,7 @@ katex = true
 Terminus supports [$\KaTeX$](https://katex.org/), a fast, easy-to-use
 JavaScript library for TeX math rendering on the Web.
 
-{{ alert(type="info", title="TODO", text="Will elaborate more later...") }}
+{{ <alert type="info" title="TODO" text="Will elaborate more later..." icon="info" /> }}
 
 ## Usage
 

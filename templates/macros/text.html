@@ -1,0 +1,62 @@
+{#
+  text.html — string-manipulation macros for Tera 2 / Zola 0.23+
+
+  Tera 2 removed the `trim_end_matches` and `linebreaksbr` filters that
+  existed in Tera 1.x. These macros restore equivalent behavior without
+  relying on any removed filter.
+
+  Usage:
+	{% import "macros/text.html" as text %}
+	{{ text::trim_end(value="hello_index.md", pat="_index.md") }}
+	{{ text::linebreaks_br(value=page.summary) }}
+#}
+
+{#
+  trim_end(value, pat)
+  Removes `pat` from the end of `value` if present, otherwise returns
+  `value` unchanged. Works character-by-character so it has no
+  dependency on `slice` or `truncate` word-boundary behavior.
+#}
+{% component trim_end(value, pat) %}
+{%- if value is ending_with(pat=pat) -%}
+	{%- set keep = (value | length) - (pat | length) -%}
+	{%- set_global __te_out = "" -%}
+	{%- set_global __te_i = 0 -%}
+	{%- for c in value -%}
+		{%- if __te_i < keep -%}{%- set_global __te_out = __te_out ~ c -%}{%- endif -%}
+		{%- set_global __te_i = __te_i + 1 -%}
+	{%- endfor -%}
+	{{- __te_out -}}
+{%- else -%}
+	{{- value -}}
+{%- endif -%}
+{% endcomponent trim_end %}
+
+{#
+  trim_start(value, pat)
+  Same idea as trim_end, but strips a prefix instead of a suffix.
+  Included for parity since `trim_start_matches` was also removed.
+#}
+{% component trim_start(value, pat) %}
+{%- if value is starting_with(pat=pat) -%}
+	{%- set skip = pat | length -%}
+	{%- set_global __ts_out = "" -%}
+	{%- set_global __ts_i = 0 -%}
+	{%- for c in value -%}
+		{%- if __ts_i >= skip -%}{%- set_global __ts_out = __ts_out ~ c -%}{%- endif -%}
+		{%- set_global __ts_i = __ts_i + 1 -%}
+	{%- endfor -%}
+	{{- __ts_out -}}
+{%- else -%}
+	{{- value -}}
+{%- endif -%}
+{% endcomponent trim_start %}
+
+{#
+  linebreaks_br(value)
+  Replaces newline characters with <br>. Replaces the removed
+  `linebreaksbr` filter using Zola's built-in `regex_replace`.
+#}
+{% component linebreaks_br(value) %}
+{{- value | regex_replace(pattern="\n", rep="<br>") -}}
+{% endcomponent linebreaks_br %}
