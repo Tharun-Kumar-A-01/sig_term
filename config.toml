@@ -89,3 +89,10 @@ allowed_domains = [
 [extra.responsive_images]
 widths = [640, 784, 1280, 1920, 2560]
 fallback_width = 1280
+
+[extra.author1]
+name = "Aadhirajan"
+
+[extra.author2]
+name = "Tharun Kumar"
+url = "https://tharun-kumar-a-01.github.io/portfolio"

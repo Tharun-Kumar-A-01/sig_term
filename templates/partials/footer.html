@@ -33,5 +33,20 @@
 {% endif -%}
 
 <p class="copyright">
-	<span>By <a>Aadhirajan</a> && <a>Tharun Kumar</a></span>
+	<span>By {% if config.extra.author1 %}
+  {% if config.extra.author1.url %}
+    <a href="{{ config.extra.author1.url }}">{{ config.extra.author1.name }}</a>
+  {% else %}
+    <span>{{ config.extra.author1.name }}</span>
+  {% endif %}
+	
+  {% if config.extra.author2 %}
+    && 
+    {% if config.extra.author2.url %}
+      <a href="{{ config.extra.author2.url }}">{{ config.extra.author2.name }}</a>
+    {% else %}
+      <span>{{ config.extra.author2.name }}</span>
+    {% endif %}
+  {% endif %}
+	{% endif %}</span>
 </p>
