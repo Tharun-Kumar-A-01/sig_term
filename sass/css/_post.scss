@@ -51,7 +51,7 @@
 	text-align: start;
 
 	&:not(:last-of-type) {
-		border-bottom: 1px solid var(--background-200);
+		border-bottom: 1px solid var(--background-4);
 	}
 }
 
@@ -63,9 +63,9 @@
 	color: var(--primary);
 
 	&>a {
-		font-family: "IBM Plex Serif", serif;
-		font-weight: normal;
-		font-style: italic;
+		font-family: "IBM Plex Sans", sans-serif;
+		// font-weight: normal;
+		// font-style: italic;
 	}
 
 	/* &::after {
@@ -83,7 +83,7 @@
 }
 
 .post-header {
-	border-bottom: 1px solid var(--background-200);
+	border-bottom: 1px solid var(--background-4);
 }
 
 .post-header.true {
@@ -94,7 +94,7 @@ ul.post-meta {
 	list-style: none;
 	display: block;
 	margin: 0 0 8px;
-	color: color-mix(in srgb, var(--text) 65%, transparent);
+	color: var(--foreground-5);
 	font-family: "IBM Plex Mono",monospace;
 	>li {
 		display: inline;
@@ -120,7 +120,7 @@ ul.post-meta {
 }
 
 .toc {
-	border-bottom: 1px solid var(--background-200);
+	border-bottom: 1px solid var(--background-4);
 	padding-left: 32px;
 
 	@media (max-width: 684px) {
@@ -181,7 +181,7 @@ h6 {
 }
 
 .footnote-definition {
-	color: var(--background-600);
+	color: var(--background-6);
 	margin-block-end: 0.6rem;
 
 	sup {
@@ -198,7 +198,7 @@ h6 {
 // GitHub-style bottom footnotes
 
 .footnotes {
-	border-top: 1px solid var(--background-200);
+	border-top: 1px solid var(--background-4);
 	margin-top: 48px;
 	position: relative;
 	&::before {
@@ -207,14 +207,14 @@ h6 {
 		font-weight: normal;
 		text-transform: uppercase;
 		letter-spacing: 2px;
-		color: var(--background-600);
+		color: var(--foreground-5);
 		position: absolute;
 		top:-12px;
 		background: var(--background);
 		padding: 0 4px;
 	}
 	.footnotes-list p {
-		color: var(--background-600);
+		color: var(--foreground-5);
 		text-align: start;
 
 		a:last-child {
@@ -241,7 +241,7 @@ h6 {
 			background: var(--background);
 			font-family: 'IBM Plex Mono',monospace;
 			line-height: calc(var(--line-height) * 0.8);
-			color: color-mix(in srgb var(--text) 30%, transparent);
+			color: var(--foreground-5);
 			font-size: calc(var(--font-size) * 0.8);
 			font-weight: normal;
 			text-transform: uppercase;

@@ -1,10 +1,10 @@
 :root {
-	--code-border: color-mix(in srgb, var(--text) 10%, transparent);
+	--code-border: var(--foreground-5);
 }
 
 $header-padding-vertical: 6px;
 $header-border-thickness: 1px;
-$line-number-color: color-mix(in srgb, var(--text) 53%, transparent);
+$line-number-color: var(--foreground-5);
 
 .copy-button {
 	position: absolute;
@@ -51,7 +51,7 @@ pre.giallo:not(:has(code[data-lang="plain"])) {
 			inset-inline-start: 0;
 			width: 100%;
 			padding: $header-padding-vertical 10px;
-			border-bottom: $header-border-thickness solid var(--code-border);
+			border-bottom: $header-border-thickness solid var(--background-2);
 			margin-bottom: 10px;
 			color: $line-number-color;
 			font-size: calc(var(--font-size) * 0.8);

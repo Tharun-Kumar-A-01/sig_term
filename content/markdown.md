@@ -18,18 +18,6 @@ in a Zola theme.
 The following HTML `<h1>`—`<h6>` elements represent six levels of section
 headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
-# H1
-
-## H2
-
-### H3
-
-#### H4
-
-##### H5
-
-###### H6
-
 ---
 
 ## Paragraph

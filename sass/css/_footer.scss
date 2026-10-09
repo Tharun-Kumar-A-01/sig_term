@@ -31,7 +31,7 @@
 				width: 1.5rem;
 				height: auto;
 				margin: 0 auto;
-				fill: var(--background-400);
+				fill: var(--background-6);
 			}
 
 			&:hover {
@@ -47,7 +47,7 @@
 	.copyright {
 		text-align: center;
 		margin: 0;
-		color: var(--background-400);
+		color: var(--background-6);
 		font-family: "IBM Plex Mono",monospace;
 
 		&>* {
@@ -59,7 +59,7 @@
 		}
 		& a {
 			text-decoration: none;
-			color: var(--background-400);
+			color: var(--background-6);
 			cursor: pointer;
 			&:hover {
 				color: var(--primary);

@@ -4,7 +4,7 @@
 
 @mixin alert-type($type) {
 	border-color: var(--alert-#{$type}-border);
-	background-color: color-mix(in srgb, var(--alert-#{$type}-bg) 15%, transparent);
+	background-color: var(--background-0);
 
 	/* >.alert-content>p>code {
 		background-color: var(--background);
@@ -12,10 +12,6 @@
 
 	a {
 		color: var(--alert-#{$type}-border);
-
-		code {
-			background-color: var(--alert-#{$type}-bg);
-		}
 	}
 
 	.alert-title {
@@ -37,34 +33,21 @@
 :root {
 	// Note
 	--alert-note-border: var(--text);
-	--alert-note-bg: var(--text-200);
-	--alert-note-code: var(--text-400);
 
 	// Tip
 	--alert-tip-border: var(--secondary);
-	--alert-tip-bg: var(--secondary-200);
-	--alert-tip-code: var(--secondary-400);
 
 	// Info
 	--alert-info-border: var(--blue);
-	--alert-info-bg: var(--blue-200);
-	--alert-info-code: var(--blue-400);
+	
 	--alert-important-border: var(--alert-info-border);
-	--alert-important-bg: var(--alert-info-bg);
-	--alert-important-code: var(--alert-info-code);
 
 	// Warning
 	--alert-warning-border: var(--yellow);
-	--alert-warning-bg: var(--yellow-200);
-	--alert-warning-code: var(--yellow-200);
 
 	// Danger
 	--alert-danger-border: var(--error);
-	--alert-danger-bg: var(--error-200);
-	--alert-danger-code: var(--error-400);
 	--alert-caution-border: var(--alert-danger-border);
-	--alert-caution-bg: var(--alert-danger-bg);
-	--alert-caution-code: var(--alert-danger-code);
 }
 
 .alert {
@@ -72,7 +55,8 @@
 	align-items: flex-start;
 	margin-block: 25px;
 	border-radius: var(--radius);
-	border: 1px solid;
+	border: none;
+	border-left: 2px solid;
 	padding: 25px;
 }
 
@@ -143,7 +127,7 @@
 	@extend .alert;
 
 	border-color: var(--alert-#{$type}-border);
-	background-color: color-mix(in srgb, var(--alert-#{$type}-bg) 15%, transparent);
+	background-color: var(--background-0);
 
 	&::before {
 		@extend .alert-icon;
