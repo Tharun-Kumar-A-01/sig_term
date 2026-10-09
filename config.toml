@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "/"
+base_url = "https://tharun-kumar-a-01.github.io/blue_term/"
 
 # The site title and description; used in feeds by default.
 title = "blue_term"
