@@ -1,10 +1,10 @@
-name = "sudoers_theme"
-description = "A dark duotone retro theme for Zola Terminus fork"
+name = "blue_term"
+description = "A fork of terminus theme made by Eyal Kalderon"
 tags = ["dark", "blog", "minimal", "personal", "responsive", "seo"]
 license = "MIT"
-homepage = "https://sr.ht/~darth_vader/sudoers_theme"
-min_version = "0.22.0"
-demo = "https://tharun-kumar-a-01.github.io/sudoers_theme/"
+homepage = "https://github.com/Tharun-Kumar-A-01/blue_term"
+min_version = "0.23.0"
+demo = "https://tharun-kumar-a-01.github.io/blue_term/"
 
 [author]
 name = "Tharun Kumar"

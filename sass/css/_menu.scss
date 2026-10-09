@@ -9,6 +9,19 @@
 	color: var(--primary);
 }
 
+// Screen reader only text
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
 .main-menu {
 	display: flex;
 	justify-content: space-between;
@@ -25,6 +38,7 @@
 		flex-wrap: wrap;
 		gap: 10px 20px;
 		overflow: visible;
+		position: relative;
 		border: none;
 		margin: 0;
 		padding-bottom: 10px;

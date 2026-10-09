@@ -1,9 +1,9 @@
 # The URL the site will be built for
-base_url = "https://sudo-ers.github.io/blog"
+base_url = "/"
 
 # The site title and description; used in feeds by default.
-title = "sudoers"
-description = "Demo of sudoers_theme"
+title = "blue_term"
+description = "Demo of blue_term theme"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -13,7 +13,7 @@ generate_feeds = true
 feed_filenames = ["rss.xml"]
 
 # The default author for pages
-author = "sudoer"
+author = "Anonymous"
 
 # The taxonomies to be rendered for the site and their configuration of the default languages
 # Example:
@@ -71,9 +71,9 @@ main_menu = [
 
 socials = [
 	{ name = "email", url = "mailto:tharunkumar8906@gmail.com" },
-	{ name = "github", url = "https://github.com/sudo-ers" },
-	{ name = "linkedin", url = "https://www.linkedin.com/in/a-tharun-kumar" },
-	{ name = "mastodon", url = "https://mastodon.social/@sudoers" },
+	{ name = "github", url = "https://github.com/Tharun-Kumar-A-01" },
+	{ name = "linkedin", url = "https://www.linkedin.com/in/ssh-daemon" },
+	{ name = "mastodon", url = "https://mastodon.social/@tharunkumar" },
 ]
 
 [extra.content_security_policy]

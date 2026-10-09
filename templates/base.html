@@ -52,9 +52,6 @@
 	{%- if <get setting="copy_button" extra={ctx_extra} ancestors={ctx_ancestors} config_extra={config.extra} default_global_value="false" /> == "true" %}
 		<script src="{{ get_url(path="js/copy-code-to-clipboard.js", cachebust=true) }}" defer></script>
 	{%- endif %}
-	{%- if config.extra.color_scheme_switcher %}
-		<script src="{{ get_url(path="js/theme-switcher.js", cachebust=true) }}" defer></script>
-	{%- endif %}
 	{%- if <get setting="katex" extra={ctx_extra} ancestors={ctx_ancestors} config_extra={config.extra} default_global_value="false" /> == "true" %}
 		<link rel="stylesheet" href="{{ get_url(path="css/katex.min.css", cachebust=true) }}">
 		<script src="{{ get_url(path="js/katex.min.js", cachebust=true) }}" defer></script>
@@ -91,7 +88,6 @@
 	{% block robots -%}
 		<meta name="robots" content="index, follow">
 	{%- endblock %}
-	<meta name="theme-color" content="#211f1a">
 	<meta name="color-scheme" content="dark">
 
 	{# Social media meta tags -#}
@@ -192,7 +188,7 @@
 	{% endblock %}
 </head>
 
-<body class="layout-{{ config.extra.layout }}" data-theme="{{ config.extra.color_scheme | default(value = "terminus") }}">
+<body class="layout-{{ config.extra.layout }}">
 	<header class="header">
 		{% filter indent -%}{%- filter indent -%}
 			{%- block header -%}
