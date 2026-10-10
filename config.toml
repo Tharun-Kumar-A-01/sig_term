@@ -1,9 +1,9 @@
 # The URL the site will be built for
-base_url = "https://tharun-kumar-a-01.github.io/blue_term/"
+base_url = "https://tharun-kumar-a-01.github.io/sig_term/"
 
 # The site title and description; used in feeds by default.
-title = "blue_term"
-description = "Demo of blue_term theme"
+title = "sig_term"
+description = "Demo of sig_term theme"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true

@@ -1,10 +1,10 @@
-name = "blue_term"
+name = "sig_term"
 description = "A fork of terminus theme made by Eyal Kalderon"
 tags = ["dark", "blog", "minimal", "personal", "responsive", "seo"]
 license = "MIT"
-homepage = "https://github.com/Tharun-Kumar-A-01/blue_term"
+homepage = "https://github.com/Tharun-Kumar-A-01/sig_term"
 min_version = "0.23.0"
-demo = "https://tharun-kumar-a-01.github.io/blue_term/"
+demo = "https://tharun-kumar-a-01.github.io/sig_term/"
 
 [author]
 name = "Tharun Kumar"

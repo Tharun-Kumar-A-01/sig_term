@@ -404,7 +404,7 @@ details {
 		padding: 3px 10px;
 		color: var(--primary);
 		transition: background 0.15s linear;
-
+		cursor: pointer;
 		&:hover {
 			background: color-mix(in srgb, var(--primary) 10%, transparent);
 		}
