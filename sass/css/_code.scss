@@ -1,10 +1,10 @@
 :root {
-	--code-border: var(--foreground-5);
+	--code-border: var(--foreground-3);
 }
 
 $header-padding-vertical: 6px;
 $header-border-thickness: 1px;
-$line-number-color: var(--foreground-5);
+$line-number-color: var(--foreground-3);
 
 .copy-button {
 	position: absolute;
@@ -15,7 +15,7 @@ $line-number-color: var(--foreground-5);
 	padding: 0 4px;
 	/* padding: 3px 8px; */
 	/* border: 1px solid color-mix(in srgb, var(--primary) 15%, transparent); */
-	border:none;
+	border: none;
 	font-size: calc(var(--font-size) * 0.8);
 	font-weight: normal;
 	line-height: 1em;
@@ -40,7 +40,7 @@ pre.giallo:not(:has(code[data-lang="plain"])) {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		padding-bottom: 10px;
+		// padding-bottom: 10px;
 		overflow-x: auto;
 		overscroll-behavior-x: none;
 
@@ -51,8 +51,8 @@ pre.giallo:not(:has(code[data-lang="plain"])) {
 			inset-inline-start: 0;
 			width: 100%;
 			padding: $header-padding-vertical 10px;
-			border-bottom: $header-border-thickness solid var(--background-2);
-			margin-bottom: 10px;
+			border-bottom: $header-border-thickness solid var(--background-4);
+			// margin-bottom: 10px;
 			color: $line-number-color;
 			font-size: calc(var(--font-size) * 0.8);
 			text-transform: uppercase;
@@ -88,7 +88,9 @@ pre.giallo:not(:has(code[data-lang="plain"])) {
 		.giallo-ln {
 			display: inline-block;
 			min-width: 2ch;
-			margin-inline-end: 20px;
+			margin-inline-end: 10px;
+			padding-inline-end: 10px;
+			border-right: 1px solid var(--background-4);
 			color: $line-number-color;
 			text-align: end;
 			user-select: none;

@@ -1,0 +1,57 @@
+.search-container {
+	padding: 0 0 8px;
+
+	& > input {
+		border: 1px solid var(--background-3);
+		font-family: "IBM Plex Mono", monospace;
+		background: var(--background);
+		padding: 8px 12px;
+
+		&:focus-visible {
+			outline: none;
+			border-color: var(--primary);
+		}
+
+		@media (max-width: 684px) {
+			width: 100%;
+		}
+	}
+
+	& .search-results {
+		background-color: var(--background);
+		max-width: 460px;
+		position: absolute;
+		z-index: 6;
+
+		& ul {
+			margin: 10px 0 0 0;
+			padding: 12px;
+			border: 1px solid var(--background-3);
+			list-style: none;
+
+			& a {
+				border: 1px solid transparent;
+				padding: 4px;
+				display: block;
+				background-color: var(--background);
+				color: var(--text);
+				text-decoration: none;
+
+				&:hover {
+					background-color: var(--background-1);
+					border: 1px solid var(--primary);
+				}
+			}
+
+			& .search-suggestion-title {
+				font-weight: bold;
+				font-size: 1rem;
+				font-family: var(--sans-serif-font);
+			}
+
+			& .search-suggestion-snippet {
+				font-size: 0.8rem;
+			}
+		}
+	}
+}

@@ -8,24 +8,24 @@
 			}
 
 			&:not(:has(input))::before {
-				content: '-';
+				content: "-";
 				position: absolute;
 				inset-inline-start: -20px;
 				color: var(--primary);
 			}
 
-			&>input {
+			& > input {
 				margin-inline-start: -4ch;
 			}
 		}
 
 		ul {
 			li:not(:has(input))::before {
-				content: '~';
+				content: "~";
 			}
 
 			ul li:not(:has(input))::before {
-				content: '>';
+				content: ">";
 			}
 		}
 	}
@@ -51,7 +51,7 @@
 	text-align: start;
 
 	&:not(:last-of-type) {
-		border-bottom: 1px solid var(--background-4);
+		border-bottom: 1px solid var(--background-3);
 	}
 }
 
@@ -62,7 +62,7 @@
 	/* border-bottom: 3px dotted var(--primary); */
 	color: var(--primary);
 
-	&>a {
+	& > a {
 		font-family: "IBM Plex Sans", sans-serif;
 		// font-weight: normal;
 		// font-style: italic;
@@ -83,7 +83,7 @@
 }
 
 .post-header {
-	border-bottom: 1px solid var(--background-4);
+	border-bottom: 1px solid var(--background-3);
 }
 
 .post-header.true {
@@ -94,13 +94,13 @@ ul.post-meta {
 	list-style: none;
 	display: block;
 	margin: 0 0 8px;
-	color: var(--foreground-5);
-	font-family: "IBM Plex Mono",monospace;
-	>li {
+	color: var(--foreground-3);
+	font-family: "IBM Plex Mono", monospace;
+	> li {
 		display: inline;
 
 		&::before {
-			content: '';
+			content: "";
 		}
 
 		&[role="separator"] {
@@ -120,11 +120,9 @@ ul.post-meta {
 }
 
 .toc {
-	border-bottom: 1px solid var(--background-4);
-	padding-left: 32px;
+	border-bottom: 1px solid var(--background-3);
 
 	@media (max-width: 684px) {
-		padding-left: 12px;
 	}
 }
 
@@ -135,7 +133,7 @@ ul.post-meta {
 	margin-bottom: 20px;
 	color: var(--primary);
 
-	&>[role="separator"] {
+	& > [role="separator"] {
 		user-select: none;
 	}
 }
@@ -176,12 +174,12 @@ h6 {
 	font-size: 0.7rem !important;
 
 	a {
-	text-decoration: none !important;
+		text-decoration: none !important;
 	}
 }
 
 .footnote-definition {
-	color: var(--background-6);
+	color: var(--background-3);
 	margin-block-end: 0.6rem;
 
 	sup {
@@ -198,27 +196,27 @@ h6 {
 // GitHub-style bottom footnotes
 
 .footnotes {
-	border-top: 1px solid var(--background-4);
+	border-top: 1px solid var(--background-3);
 	margin-top: 48px;
 	position: relative;
 	&::before {
-		content: 'FOOTNOTES';
+		content: "FOOTNOTES";
 		font-size: 0.8rem;
 		font-weight: normal;
 		text-transform: uppercase;
 		letter-spacing: 2px;
-		color: var(--foreground-5);
+		color: var(--foreground-3);
 		position: absolute;
-		top:-12px;
+		top: -12px;
 		background: var(--background);
 		padding: 0 4px;
 	}
 	.footnotes-list p {
-		color: var(--foreground-5);
+		color: var(--foreground-3);
 		text-align: start;
 
 		a:last-child {
-		text-decoration: none;
+			text-decoration: none;
 		}
 	}
 }
@@ -239,9 +237,9 @@ h6 {
 			margin: 0 auto;
 			padding: 8px 10px 3px;
 			background: var(--background);
-			font-family: 'IBM Plex Mono',monospace;
+			font-family: "IBM Plex Mono", monospace;
 			line-height: calc(var(--line-height) * 0.8);
-			color: var(--foreground-5);
+			color: var(--foreground-3);
 			font-size: calc(var(--font-size) * 0.8);
 			font-weight: normal;
 			text-transform: uppercase;
@@ -268,7 +266,7 @@ h6 {
 		gap: 10px;
 		padding-bottom: 30px;
 
-		>a {
+		> a {
 			text-align: center;
 			text-decoration: none;
 		}

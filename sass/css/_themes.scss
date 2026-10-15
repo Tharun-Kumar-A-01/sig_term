@@ -1,76 +1,104 @@
 @media (prefers-color-scheme: light) {
 	:root {
-		--foreground: #0f0f0f;
-		--background: #ffffff;
-		--primary: green;
-		--secondary: forestgreen;
-		--accent: darkblue;
-		--error: red;
-		--yellow: darkorange;
-		--blue: rebeccapurple;
+		--foreground: var(--base05);
+		--background: var(--base00);
+		--primary: var(--base0B);
+		--secondary: var(--base0C);
+		--accent: var(--base0D);
+		--error: var(--base08);
+		--red: var(--base08);
+		--orange: var(--base09);
+		--green: var(--base0B);
+		--teal: var(--base0C);
+		--voilet: var(--base0E);
+		--yellow: var(--base0A);
+		--blue: var(--base0D);
+
 		--font-size: 1.7rem;
 		--line-height: 1.54em;
 		--radius: 0;
 		--text: var(--foreground);
 
-		--background-0: color-mix(var(--background) 98%, black 2%);
-		--background-1: color-mix(var(--background) 90%, black 10%);
-		--background-2: color-mix(var(--background) 85%, black 15%);
-		--background-3: color-mix(var(--background) 80%, black 20%);
-		--background-4: color-mix(var(--background) 75%, black 25%);
-		--background-5: color-mix(var(--background) 70%, black 30%);
-		--background-6: color-mix(var(--background) 65%, black 35%);
-		--background-7: color-mix(var(--background) 60%, black 40%);
-		--background-8: color-mix(var(--background) 55%, black 45%);
-		--background-9: color-mix(var(--background) 50%, black 50%);
+		--background-1: var(
+			--base01,
+			color-mix(var(--background) 98%, black 2%)
+		);
+		--background-2: var(
+			--base02,
+			color-mix(var(--background) 90%, black 10%)
+		);
+		--background-3: var(
+			--base03,
+			color-mix(var(--background) 80%, black 20%)
+		);
+		--background-4: var(
+			--base04,
+			color-mix(var(--background) 70%, black 30%)
+		);
 
-		--foreground-0: color-mix(var(--foreground) 98%, white 2%);
-		--foreground-1: color-mix(var(--foreground) 90%, white 10%);
-		--foreground-2: color-mix(var(--foreground) 85%, white 15%);
-		--foreground-3: color-mix(var(--foreground) 80%, white 20%);
-		--foreground-4: color-mix(var(--foreground) 75%, white 25%);
-		--foreground-5: color-mix(var(--foreground) 70%, white 30%);
-		--foreground-6: color-mix(var(--foreground) 65%, white 35%);
-		--foreground-7: color-mix(var(--foreground) 60%, white 40%);
-		--foreground-8: color-mix(var(--foreground) 55%, white 45%);
-		--foreground-9: color-mix(var(--foreground) 50%, white 50%);
+		--foreground-1: var(
+			--base07,
+			color-mix(var(--foreground) 98%, white 2%)
+		);
+		--foreground-2: var(
+			--base06,
+			color-mix(var(--foreground) 80%, white 20%)
+		);
+		--foreground-3: var(
+			--base05,
+			color-mix(var(--foreground) 70%, white 30%)
+		);
 	}
 }
 @media (prefers-color-scheme: dark) {
 	:root {
-		--foreground: #f2f2f2;
-		--background: #0f0f0f;
-		--primary: mediumseagreen;
-		--secondary: lawngreen;
-		--accent: cornflowerblue;
-		--error: red;
-		--yellow: yellow;
-		--blue: mediumslateblue;
+		--foreground: var(--base05);
+		--background: var(--base00);
+		--primary: var(--base0B);
+		--secondary: var(--base0C);
+		--accent: var(--base0D);
+		--error: var(--base08);
+		--red: var(--base08);
+		--orange: var(--base09);
+		--green: var(--base0B);
+		--teal: var(--base0C);
+		--voilet: var(--base0E);
+		--yellow: var(--base0A);
+		--blue: var(--base0D);
+
 		--font-size: 1.7rem;
 		--line-height: 1.54em;
 		--radius: 0;
 		--text: var(--foreground);
 
-		--background-0: color-mix(var(--background) 98%, white 2%);
-		--background-1: color-mix(var(--background) 90%, white 10%);
-		--background-2: color-mix(var(--background) 85%, white 15%);
-		--background-3: color-mix(var(--background) 80%, white 20%);
-		--background-4: color-mix(var(--background) 75%, white 25%);
-		--background-5: color-mix(var(--background) 70%, white 30%);
-		--background-6: color-mix(var(--background) 65%, white 35%);
-		--background-7: color-mix(var(--background) 60%, white 40%);
-		--background-8: color-mix(var(--background) 55%, white 45%);
-		--background-9: color-mix(var(--background) 50%, white 50%);
+		--background-1: var(
+			--base01,
+			color-mix(var(--background) 98%, white 2%)
+		);
+		--background-2: var(
+			--base02,
+			color-mix(var(--background) 90%, white 10%)
+		);
+		--background-3: var(
+			--base03,
+			color-mix(var(--background) 80%, white 20%)
+		);
+		--background-4: var(
+			--base04,
+			color-mix(var(--background) 70%, white 30%)
+		);
 
-		--foreground-0: color-mix(var(--foreground) 98%, black 2%);
-		--foreground-1: color-mix(var(--foreground) 90%, black 10%);
-		--foreground-2: color-mix(var(--foreground) 85%, black 15%);
-		--foreground-3: color-mix(var(--foreground) 80%, black 20%);
-		--foreground-4: color-mix(var(--foreground) 75%, black 25%);
-		--foreground-5: color-mix(var(--foreground) 70%, black 30%);
-		--foreground-6: color-mix(var(--foreground) 65%, black 35%);
-		--foreground-7: color-mix(var(--foreground) 60%, black 40%);
-		--foreground-8: color-mix(var(--foreground) 55%, black 45%);
-		--foreground-9: color-mix(var(--foreground) 50%, black 50%);
+		--foreground-1: var(
+			--base07,
+			color-mix(var(--foreground) 98%, black 2%)
+		);
+		--foreground-2: var(
+			--base06,
+			color-mix(var(--foreground) 80%, black 20%)
+		);
+		--foreground-3: var(
+			--base05,
+			color-mix(var(--foreground) 70%, black 30%)
+		);
 	}
 }

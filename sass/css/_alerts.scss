@@ -4,7 +4,7 @@
 
 @mixin alert-type($type) {
 	border-color: var(--alert-#{$type}-border);
-	background-color: var(--background-0);
+	background-color: var(--background-1);
 
 	/* >.alert-content>p>code {
 		background-color: var(--background);
@@ -35,11 +35,11 @@
 	--alert-note-border: var(--text);
 
 	// Tip
-	--alert-tip-border: var(--secondary);
+	--alert-tip-border: var(--green);
 
 	// Info
-	--alert-info-border: var(--blue);
-	
+	--alert-info-border: var(--voilet);
+
 	--alert-important-border: var(--alert-info-border);
 
 	// Warning
@@ -64,7 +64,7 @@
 	flex: 1;
 	margin-inline-start: -2rem;
 
-	&>:not(:first-child) {
+	& > :not(:first-child) {
 		margin-block: 1rem 0;
 	}
 
@@ -116,7 +116,7 @@
 	mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0xMjAsMTZWOGE4LDgsMCwwLDEsMTYsMHY4YTgsOCwwLDAsMS0xNiwwWm04MCwzMmE4LDgsMCwwLDAsNS42Ni0yLjM0bDgtOGE4LDgsMCwwLDAtMTEuMzItMTEuMzJsLTgsOEE4LDgsMCwwLDAsMjAwLDQ4Wk01MC4zNCw0NS42NkE4LDgsMCwwLDAsNjEuNjYsMzQuMzRsLTgtOEE4LDgsMCwwLDAsNDIuMzQsMzcuNjZabTg3LDI2LjQ1YTgsOCwwLDEsMC0yLjY0LDE1Ljc4QzE1My42Nyw5MS4wOCwxNjgsMTA4LjMyLDE2OCwxMjhhOCw4LDAsMCwwLDE2LDBDMTg0LDEwMC42LDE2My45Myw3Ni41NywxMzcuMzIsNzIuMTFaTTIzMiwxNzZ2MjRhMTYsMTYsMCwwLDEtMTYsMTZINDBhMTYsMTYsMCwwLDEtMTYtMTZWMTc2YTE2LDE2LDAsMCwxLDE2LTE2VjEyOGE4OCw4OCwwLDAsMSw4OC42Ny04OGM0OC4xNS4zNiw4Ny4zMyw0MC4yOSw4Ny4zMyw4OXYzMUExNiwxNiwwLDAsMSwyMzIsMTc2Wk01NiwxNjBIMjAwVjEyOWMwLTQwLTMyLjA1LTcyLjcxLTcxLjQ1LTczSDEyOGE3Miw3MiwwLDAsMC03Miw3MlptMTYwLDQwVjE3Nkg0MHYyNEgyMTZaIj48L3BhdGg+PC9zdmc+");
 }
 
-@each $type in 'note', 'tip', 'info', 'warning', 'danger' {
+@each $type in "note", "tip", "info", "warning", "danger" {
 	.alert.#{$type} {
 		@include alert-type($type);
 	}
@@ -127,18 +127,18 @@
 	@extend .alert;
 
 	border-color: var(--alert-#{$type}-border);
-	background-color: var(--background-0);
+	background-color: var(--background-1);
 
 	&::before {
 		@extend .alert-icon;
 		@extend .alert-icon-#{$type};
 
-		content: '';
+		content: "";
 		background-color: var(--alert-#{$type}-border);
 		margin-inline-start: 25px;
 	}
 
-	>p {
+	> p {
 		&::before {
 			@extend .alert-title;
 
@@ -147,7 +147,7 @@
 			margin-block-end: 1rem;
 		}
 
-		&>code {
+		& > code {
 			color: var(--alert-#{$type}-border);
 		}
 
@@ -160,7 +160,7 @@
 	}
 }
 
-@each $type in 'note', 'tip', 'important', 'warning', 'caution' {
+@each $type in "note", "tip", "important", "warning", "caution" {
 	.markdown-alert-#{$type} {
 		@include alert-type-zola($type);
 	}

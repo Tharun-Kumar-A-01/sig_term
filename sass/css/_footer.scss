@@ -1,6 +1,6 @@
 .footer {
 	padding: 40px 0;
-	font-family: "IBM Plex Mono",monospace;
+	font-family: "IBM Plex Mono", monospace;
 
 	a {
 		color: inherit;
@@ -26,18 +26,18 @@
 			display: flex;
 			padding: 0.66rem;
 
-			&>svg {
+			& > svg {
 				aspect-ratio: 1/1;
 				width: 1.5rem;
 				height: auto;
 				margin: 0 auto;
-				fill: var(--background-6);
+				fill: var(--background-3);
 			}
 
 			&:hover {
 				background: var(--primary);
 
-				&>svg {
+				& > svg {
 					fill: var(--background);
 				}
 			}
@@ -47,19 +47,19 @@
 	.copyright {
 		text-align: center;
 		margin: 0;
-		color: var(--background-6);
-		font-family: "IBM Plex Mono",monospace;
+		color: var(--background-3);
+		font-family: "IBM Plex Mono", monospace;
 
-		&>* {
+		& > * {
 			text-wrap: nowrap;
 
 			&:not(:first-child)::before {
-				content: '|';
+				content: "|";
 			}
 		}
 		& a {
 			text-decoration: none;
-			color: var(--background-6);
+			color: var(--background-3);
 			cursor: pointer;
 			&:hover {
 				color: var(--primary);

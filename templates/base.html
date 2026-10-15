@@ -56,6 +56,11 @@
 		<link rel="stylesheet" href="{{ get_url(path="css/katex.min.css", cachebust=true) }}">
 		<script src="{{ get_url(path="js/katex.min.js", cachebust=true) }}" defer></script>
 	{%- endif %}
+	{%- if config.build_search_index %}
+		<script src="{{ get_url(path="elasticlunr.min.js") }}" defer></script>
+		<script src="{{ get_url(path="search_index." ~ lang ~ ".js") }}" defer></script>
+		<script src="{{ get_url(path="js/search.js", cachebust=true) }}" defer></script>
+	{%- endif %}
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +74,7 @@
 		{%- for feed in config.feed_filenames -%}
 		{{ <link_alternate filename={feed} title={config.title} /> }}
 		{% endfor -%}
-	{%- block feeds -%}{%- endblock -%}
+		{%- block feeds -%}{%- endblock -%}
 	{% endif %}
 
 	{#- Standard meta tags -#}
@@ -137,6 +142,13 @@
 		<meta name="twitter:card" content="summary_large_image">
 	{% endif -%}
 
+	{%- if config.extra.light_color_scheme -%}
+		<link rel="stylesheet" href="/css/themes/{{ config.extra.light_color_scheme }}.css">
+	{% endif -%}
+	{%- if config.extra.dark_color_scheme -%}
+		<link rel="stylesheet" href="/css/themes/{{ config.extra.dark_color_scheme }}.css">
+	{% endif -%}
+	
 	{%- if current_url is defined -%}
 		{%- if page is defined and page.permalink -%}
 			{%- set permalink = page.permalink -%}
@@ -162,21 +174,21 @@
 	<meta property="og:site_name" content="{{ config.title }}">
 	<meta property="og:updated_time" content="{{ now() }}">
 
-	{%- if page is defined and page.date %}
+	{%- if page is defined and page.date -%}
 		<meta property="article:published_time" content="{{ page.date | date(format="%Y-%m-%d") }}">
 	{%- endif -%}
-	{%- if page is defined and page.updated %}
+	{%- if page is defined and page.updated -%}
 		<meta property="article:modified_time" content="{{ page.updated | date(format="%Y-%m-%d") }}">
 	{%- endif -%}
-	{%- if page is defined and "categories" in page.taxonomies %}
+	{%- if page is defined and "categories" in page.taxonomies -%}
 		<meta property="article:section" content="{{ page.taxonomies.categories[0] }}">
 	{%- endif -%}
 	{%- if page is defined and "tags" in page.taxonomies -%}
-		{%- for tag in page.taxonomies.tags %}
+		{%- for tag in page.taxonomies.tags -%}
 			<meta property="article:tag" content="{{ tag }}">
 		{%- endfor -%}
 	{%- endif -%}
-	{%- if config.extra.fediverse_creator %}
+	{%- if config.extra.fediverse_creator -%}
 		<meta name="fediverse:creator" content="{{ config.extra.fediverse_creator }}">
 	{%- endif %}
 

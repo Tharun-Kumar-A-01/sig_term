@@ -51,11 +51,13 @@ style = "inline"
 
 # The theme to use for code highlighting.
 # See https://github.com/getzola/giallo?tab=readme-ov-file#themes for the list of allowed values.
-light_theme = "github-light-default"
-dark_theme = "github-dark-default"
+light_theme = "catppuccin-latte"
+dark_theme = "catppuccin-mocha"
 
 [extra]
 logo_base_url = "/"
+light_color_scheme = "catppuccin-latte"
+dark_color_scheme = "catppuccin-mocha"
 
 close_responsive_menu_on_resize = true
 favicon_emoji = "~/"
