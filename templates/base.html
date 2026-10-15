@@ -143,10 +143,10 @@
 	{% endif -%}
 
 	{%- if config.extra.light_color_scheme -%}
-		<link rel="stylesheet" href="/css/themes/{{ config.extra.light_color_scheme }}.css">
+		<link rel="stylesheet" href="{{ config.base_url }}css/themes/{{ config.extra.light_color_scheme }}.css">
 	{% endif -%}
 	{%- if config.extra.dark_color_scheme -%}
-		<link rel="stylesheet" href="/css/themes/{{ config.extra.dark_color_scheme }}.css">
+		<link rel="stylesheet" href="{{ config.base_url }}css/themes/{{ config.extra.dark_color_scheme }}.css">
 	{% endif -%}
 	
 	{%- if current_url is defined -%}
