@@ -52,12 +52,12 @@ style = "inline"
 # The theme to use for code highlighting.
 # See https://github.com/getzola/giallo?tab=readme-ov-file#themes for the list of allowed values.
 light_theme = "catppuccin-latte"
-dark_theme = "catppuccin-mocha"
+dark_theme = "tokyo-night"
 
 [extra]
-logo_base_url = "/"
-light_color_scheme = "catppuccin-latte"
-dark_color_scheme = "catppuccin-mocha"
+logo_base_url = "/blog/"
+light_color_scheme = "tokyo-night-light"
+dark_color_scheme = "tokyo-night-dark"
 
 close_responsive_menu_on_resize = true
 favicon_emoji = "~/"
@@ -93,8 +93,8 @@ widths = [640, 784, 1280, 1920, 2560]
 fallback_width = 1280
 
 [extra.author1]
-name = "Maintainer-1"
+name = "Tharun Kumar"
+url = "https://tharun-kumar-a-01.github.io/portfolio"
 
 [extra.author2]
 name = "Maintainer-2"
-url = "https://tharun-kumar-a-01.github.io/portfolio"

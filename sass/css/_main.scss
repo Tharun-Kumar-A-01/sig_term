@@ -4,10 +4,6 @@ $max-layout-width: 864px;
 	--font-size: 1rem;
 	--line-height: 1.54em;
 	--radius: 0;
-	--serif-font: "IBM Plex Serif", serif;
-	--sans-serif-font: "IBM Plex Sans", sans-serif;
-	--monospace-font:
-		"IBM Plex Mono", Monaco, Consolas, "Ubuntu Mono", monospace;
 
 	@media (max-width: 684px) {
 		--font-size: 0.95rem;
@@ -33,7 +29,7 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: "IBM Plex Mono", Monaco, Consolas, "Ubuntu Mono", monospace;
+	font-family: var(--monospace-font), Monaco, Consolas, "Ubuntu Mono", monospace;
 	font-size: var(--font-size);
 	line-height: var(--line-height);
 	background: var(--background);
@@ -78,7 +74,7 @@ main {
 h1 {
 	font-size: calc(var(--font-size) * 2.35);
 	letter-spacing: 0;
-	font-family: "IBM Plex Sans", sans-serif;
+	font-family: var(--sans-serif-font), sans-serif;
 	margin: 48px 0 24px;
 	line-height: calc(var(--font-size) * 2.45);
 }
@@ -86,7 +82,7 @@ h1 {
 h2 {
 	font-size: calc(var(--font-size) * 1.95);
 	letter-spacing: 0;
-	font-family: "IBM Plex Sans", sans-serif;
+	font-family: var(--sans-serif-font), sans-serif;
 	line-height: calc(var(--font-size) * 2.05);
 	margin: 48px 0 24px;
 }
@@ -94,7 +90,7 @@ h2 {
 h3 {
 	font-size: calc(var(--font-size) * 1.75);
 	letter-spacing: 0;
-	font-family: "IBM Plex Sans", sans-serif;
+	font-family: var(--sans-serif-font), sans-serif;
 	line-height: calc(var(--font-size) * 1.85);
 	margin: 48px 0 24px;
 }
@@ -104,7 +100,7 @@ h5,
 h6 {
 	font-size: calc(var(--font-size) * 1.35);
 	letter-spacing: 0;
-	font-family: "IBM Plex Sans", sans-serif;
+	font-family: var(--sans-serif-font), sans-serif;
 	margin: 48px 0 24px;
 	line-height: calc(var(--font-size) * 1.45);
 }
@@ -117,12 +113,12 @@ figure,
 video,
 table {
 	margin: 25px 0;
-	font-family: "IBM Plex Sans", sans-serif;
+	font-family: var(--sans-serif-font), sans-serif;
 }
 
 a {
 	color: var(--primary);
-	font-family: "IBM Plex Mono", monospace;
+	font-family: var(--monospace-font), monospace;
 	outline: none;
 	&.read-more {
 		text-decoration: none;
@@ -147,7 +143,7 @@ button {
 	letter-spacing: 1px;
 	cursor: pointer;
 	outline: none;
-	font-family: "IBM Plex Mono", monospace;
+	font-family: var(--monospace-font), monospace;
 
 	&:hover {
 		background: var(--primary);
@@ -237,7 +233,7 @@ ol {
 		position: relative;
 
 		&::marker {
-			font-family: "IBM Plex Mono", monospace;
+			font-family: var(--monospace-font), monospace;
 			color: var(--primary);
 		}
 	}
@@ -245,7 +241,7 @@ ol {
 
 @mixin preformatted {
 	font-family:
-		"IBM Plex Mono", Monaco, Consolas, "Ubuntu Mono", monospace !important;
+		var(--monospace-font), Monaco, Consolas, "Ubuntu Mono", monospace !important;
 	font-feature-settings: normal;
 	background: var(--background-1);
 	border: 1px solid var(--background-3);
@@ -339,7 +335,7 @@ blockquote {
 	}
 	&::after {
 		content: "“";
-		font-family: "IBM Plex Mono", monospace;
+		font-family: var(--monospace-font), monospace;
 		display: block;
 		position: absolute;
 		top: 6px;
@@ -356,7 +352,7 @@ blockquote {
 			content: "";
 		}
 		p::before {
-			font-family: "IBM Plex Mono", monospace;
+			font-family: var(--monospace-font), monospace;
 		}
 	}
 	p:first-child {
@@ -380,7 +376,7 @@ table {
 
 	th {
 		border-style: solid;
-		font-family: "IBM Plex Mono", monospace;
+		font-family: var(--monospace-font), monospace;
 		color: var(--text);
 		background-color: var(--background-1);
 		text-transform: uppercase;

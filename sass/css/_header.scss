@@ -31,7 +31,7 @@
 .header-logo-container {
 	display: flex;
 	flex: 1;
-	font-family: "IBM Plex Mono", monospace;
+	font-family: var(--monospace-font), monospace;
 
 	p {
 		flex: 0 0 auto;
@@ -42,7 +42,7 @@
 		flex-direction: row;
 		align-items: center;
 		gap: 12px;
-		font-family: "IBM Plex Mono", monospace;
+		font-family: var(--monospace-font), monospace;
 
 		#current-path {
 			color: var(--primary);

@@ -8,7 +8,7 @@
 		10px 10px var(--background);
 	padding: 10px;
 	background: var(--background);
-	font-family: "IBM Plex Mono", monospace;
+	font-family: var(--monospace-font), monospace;
 	color: var(--primary);
 }
 
@@ -29,7 +29,7 @@
 	display: flex;
 	justify-content: space-between;
 	margin: 20px 1px;
-	font-family: "IBM Plex Mono", monospace;
+	font-family: var(--monospace-font), monospace;
 	margin: 0;
 
 	@media (max-width: 684px) {
@@ -47,7 +47,7 @@
 		margin: 0;
 		background: unset;
 		list-style: none;
-		font-family: "IBM Plex Mono", monospace;
+		font-family: var(--monospace-font), monospace;
 		justify-content: flex-end;
 		@media (max-width: 734px) {
 			display: none;
@@ -78,7 +78,7 @@
 		margin-inline-start: 10px;
 		padding: 3px 8px;
 		anchor-name: --popover-button;
-		font-family: "IBM Plex Mono", monospace;
+		font-family: var(--monospace-font), monospace;
 
 		@media (max-width: 734px) {
 			display: flex;

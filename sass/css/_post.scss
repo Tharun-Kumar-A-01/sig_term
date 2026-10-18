@@ -63,7 +63,7 @@
 	color: var(--primary);
 
 	& > a {
-		font-family: "IBM Plex Sans", sans-serif;
+		font-family: var(--sans-serif-font), sans-serif;
 		// font-weight: normal;
 		// font-style: italic;
 	}
@@ -95,7 +95,7 @@ ul.post-meta {
 	display: block;
 	margin: 0 0 8px;
 	color: var(--foreground-3);
-	font-family: "IBM Plex Mono", monospace;
+	font-family: var(--monospace-font), monospace;
 	> li {
 		display: inline;
 
@@ -122,6 +122,14 @@ ul.post-meta {
 .toc {
 	border-bottom: 1px solid var(--background-3);
 
+	& a {
+		text-decoration: none;
+		color: var(--text);
+		&:hover {
+			color: var(--primary);
+			text-decoration: underline;
+		}
+	}
 	@media (max-width: 684px) {
 	}
 }
@@ -237,7 +245,7 @@ h6 {
 			margin: 0 auto;
 			padding: 8px 10px 3px;
 			background: var(--background);
-			font-family: "IBM Plex Mono", monospace;
+			font-family: var(--monospace-font), monospace;
 			line-height: calc(var(--line-height) * 0.8);
 			color: var(--foreground-3);
 			font-size: calc(var(--font-size) * 0.8);

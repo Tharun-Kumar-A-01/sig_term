@@ -3,10 +3,13 @@
 
 	& > input {
 		border: 1px solid var(--background-3);
-		font-family: "IBM Plex Mono", monospace;
+		font-family: var(--monospace-font), monospace;
 		background: var(--background);
 		padding: 8px 12px;
 
+		&::placeholder {
+			color: var(--background-3);
+		}
 		&:focus-visible {
 			outline: none;
 			border-color: var(--primary);
