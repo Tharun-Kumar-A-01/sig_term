@@ -51,7 +51,7 @@ pre.giallo:not(:has(code[data-lang="plain"])) {
 			inset-inline-start: 0;
 			width: 100%;
 			padding: $header-padding-vertical 10px;
-			border-bottom: $header-border-thickness solid var(--background-4);
+			border-bottom: $header-border-thickness solid var(--background-3);
 			margin-bottom: 10px;
 			color: $line-number-color;
 			font-size: calc(var(--font-size) * 0.8);

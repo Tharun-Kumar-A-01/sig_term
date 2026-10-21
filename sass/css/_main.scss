@@ -282,7 +282,7 @@ pre {
 	font-size: calc(var(--font-size) * 0.95) !important;
 	overflow: auto;
 	border-radius: var(--radius);
-	border: 1px solid var(--background-4);
+	border: 1px solid var(--background-3);
 	direction: ltr;
 
 	code {
@@ -389,7 +389,7 @@ hr {
 	height: 1px;
 	border: none;
 	margin: 48px 0;
-	background: var(--background-4);
+	background: var(--background-3);
 }
 
 details {
