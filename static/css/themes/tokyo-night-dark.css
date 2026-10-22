@@ -20,25 +20,3 @@
     --base0F: #F7768E;
   }
 }
-/* Tokyo Night Dark by Michaël Ball */
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --base00: #1A1B26;
-    --base01: #16161E;
-    --base02: #2F3549;
-    --base03: #444B6A;
-    --base04: #787C99;
-    --base05: #A9B1D6;
-    --base06: #CBCCD1;
-    --base07: #D5D6DB;
-    --base08: #F7768E;
-    --base09: #ff9e64;
-    --base0A: #e0af68;
-    --base0B: #9ECE6A;
-    --base0C: #0DB9D7;
-    --base0D: #2AC3DE;
-    --base0E: #BB9AF7;
-    --base0F: #F7768E;
-  }
-}

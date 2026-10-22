@@ -74,7 +74,7 @@ main {
 h1 {
 	font-size: calc(var(--font-size) * 2.35);
 	letter-spacing: 0;
-	font-family: var(--sans-serif-font), sans-serif;
+	font-family: var(--heading-font), sans-serif;
 	margin: 48px 0 24px;
 	line-height: calc(var(--font-size) * 2.45);
 }
@@ -82,7 +82,7 @@ h1 {
 h2 {
 	font-size: calc(var(--font-size) * 1.95);
 	letter-spacing: 0;
-	font-family: var(--sans-serif-font), sans-serif;
+	font-family: var(--heading-font), sans-serif;
 	line-height: calc(var(--font-size) * 2.05);
 	margin: 48px 0 24px;
 }
@@ -90,7 +90,7 @@ h2 {
 h3 {
 	font-size: calc(var(--font-size) * 1.75);
 	letter-spacing: 0;
-	font-family: var(--sans-serif-font), sans-serif;
+	font-family: var(--heading-font), sans-serif;
 	line-height: calc(var(--font-size) * 1.85);
 	margin: 48px 0 24px;
 }
@@ -100,7 +100,7 @@ h5,
 h6 {
 	font-size: calc(var(--font-size) * 1.35);
 	letter-spacing: 0;
-	font-family: var(--sans-serif-font), sans-serif;
+	font-family: var(--heading-font), sans-serif;
 	margin: 48px 0 24px;
 	line-height: calc(var(--font-size) * 1.45);
 }
@@ -113,7 +113,7 @@ figure,
 video,
 table {
 	margin: 25px 0;
-	font-family: var(--sans-serif-font), sans-serif;
+	font-family: var(--paragraph-font), sans-serif;
 }
 
 a {
